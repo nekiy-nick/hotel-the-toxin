@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://bunglebrot.github.io/toxin/",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.build.conf.js"
+    "build": "webpack --config ./build/webpack.build.conf.js",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     "> 1%",
@@ -14,7 +16,9 @@
   "keywords": [],
   "author": "Bunglebrot",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "autoprefixer": "^9.7.6",
