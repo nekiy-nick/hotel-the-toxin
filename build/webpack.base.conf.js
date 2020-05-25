@@ -115,7 +115,7 @@ module.exports = {
 // Аллиасы
   resolve: {
     alias: {
-      '~': PATHS.src
+      '~': 'src'
     }
   },
  
