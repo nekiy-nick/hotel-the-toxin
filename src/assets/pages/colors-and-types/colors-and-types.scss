@@ -1,0 +1,19 @@
+.wrapper {
+  background: #ccc;
+}
+
+.content-wrapper {
+
+  margin-top: 145px;
+  display: flex;
+  // flex-flow: column wrap;
+  // justify-content: center;
+}
+
+.wrapper-block-color {
+  margin-left: 150px;
+}
+.wrapper-block-type {
+  display: flex;
+  flex-flow: column wrap;
+}
