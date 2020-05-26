@@ -1,0 +1,31 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title #{title}
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+    meta(name="description", content=description)
+    meta(name="keywords", content="keywords")
+    //- подключение favicons - 16 и 32 для ретины, чтобы было красиво в браузерной строке и в закладках
+    link(rel="shortcut icon", type="image/png", sizes="16x16", href="favicons/favicon-16x16.png")
+    link(rel="shortcut icon", type="image/png", sizes="32x32", href="favicons/favicon-32x32.png")
+    //- для эпл
+    link(rel="shortcut icon", type="image/png", sizes="180x180", href="favicons/apple-touch-icon.png")
+    //- для андроида (в манифесте можно упомянуть 16, 32, вектор, цвета и название - пригодиться)
+    link(rel="manifest", href="favicon/site.webmanifest")
+    link(rel="shortcut icon", type="image/ico", sizes="32x32", href="favicons/favicon.ico")
+    //- не знаю нужны ли следущие три правила для иконок - взял с сайта генератора иконок
+    link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#5bbad5")
+    meta(name="msapplication-TileColor", content="#603cba")
+    meta(name="theme-color", content="#ffffff")
+
+    block head
+
+  body(class=pageClass)
+    .logo
+      img(src="assets/img/pages_logotype/logo.png" alt="logotype")
+    block content
+
+
+    block script
