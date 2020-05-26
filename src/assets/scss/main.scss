@@ -1,0 +1,15 @@
+
+// подключение fontawesome из npm модуля
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import 'reset.scss';
+@import 'fonts.scss';
+@import 'vars.scss';
+
+// импорт файлов проекта
+@import '../blocks/blocks';
+// импорт блоков-обёрток для страниц
+@import '../pages/colors-and-types/colors-and-types.scss';
+// импорт стилей для шаблона
+@import '../layout/page-layout.scss';

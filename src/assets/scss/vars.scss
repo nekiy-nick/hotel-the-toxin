@@ -1,0 +1,12 @@
+$main-font: 'montserrat', Helvetica, sans-serif;
+$secondary-font: 'opensans', Helvetica, sans-serif;
+
+// Variables of Colors -- переменные цветовой палитры
+$primary-darker: rgba(31, 32, 65, 1);
+$primary-dark: transparentize($primary-darker, .25);
+$primary-main: transparentize($primary-darker, .5);
+$primary-light: transparentize($primary-darker, .75);
+$primary-lighten: transparentize($primary-darker, .95);
+// с греческого космос - украшение => это цвет для украшения элементов, можно переименовать в apply
+$cosmos-color: #BC9CFF;
+$success-color: #6FCF97;
