@@ -1,0 +1,6 @@
+mixin color(name, hex, mode)
+  .color-palitra
+    div(class="color-palitra__reference-color color-palitra__reference-color" + mode)
+    .color-palitra__description-color
+      span(class="color-palitra__name")= name
+      span(class="color-palitra__hex")= hex

@@ -1,0 +1,55 @@
+.color-palitra {
+  display: flex;
+  margin-bottom: 20px;
+  
+  &__reference-color {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background: $primary-darker;
+// модификаторы палитры
+    &_primary-dark-color {
+      background-color: $primary-dark;
+    }
+
+    &_primary-main-color {
+      background-color: $primary-main;
+    }
+
+    &_primary-light-color {
+      background-color: $primary-light;
+    }
+
+    &_primary-lighten-color {
+      background-color: $primary-lighten;
+    }
+
+    &_cosmos-color {
+      background-color: $cosmos-color;
+    }
+
+    &_success {
+      background: $success-color;
+    }
+  }
+
+  &__description-color {
+    padding-left: 40px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    line-height: 29px;
+  }
+  &__name {
+    text-transform: capitalize;
+    font-size: 19px;
+    font-family: $secondary-font;
+    font-weight: bold;
+  }
+  &__hex {
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    font-size: 19px;
+    // font-weight: lighter;
+  }
+}
