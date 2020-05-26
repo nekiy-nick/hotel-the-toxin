@@ -3,6 +3,5 @@ package-lock.json
 
 /node_modules
 *txt
-*js
-/src/static
+
 /dist
