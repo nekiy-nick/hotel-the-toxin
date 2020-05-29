@@ -1,10 +1,9 @@
-
 /* данный шрифт нашёл пока только в UI KiT Colors & Type
 если нигде не будет - удалить */
 @font-face { 
   font-family: 'opensans';
   font-display: swap;
-  src: local('Opensans'), url('../fonts/OpenSans-Regular/OpenSans-Regular.woff') format('woff'), url('../fonts/OpenSans-Regular/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular/OpenSans-Regular.svg') format('svg');
+  src: local('Opensans-Sans'), url('../fonts/OpenSans-Regular/OpenSans-Regular.woff') format('woff'), url('../fonts/OpenSans-Regular/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular/OpenSans-Regular.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +15,7 @@
   /* swap - Устанавливает период блокировки шрифта при загрузке в 0 секунд и бесконечный период замены. */
   font-display: swap;
   /* woff формат отличается от ttf немного. если отключить woff, ttf будет рисоваться чуть иначе (замечено в Firefox 74)*/
-  src: local('Opensans'), url('../fonts/OpenSans-Bold/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold/OpenSans-Bold.ttf') format('truetype'), url('../fonts/OpenSans-Bold/OpenSans-Bold.svg') format('svg');
+  src: local('Open-Sans-Bold'), url('../fonts/OpenSans-Bold/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold/OpenSans-Bold.ttf') format('truetype'), url('../fonts/OpenSans-Bold/OpenSans-Bold.svg') format('svg');
   /* при использовании font-weight: bold; начертание становится более узким на 2 пикселя, чем без него*/
   /* !!! проверить на pixel-perfect как лучше */
   font-weight: bold;
@@ -34,7 +33,7 @@
 @font-face {
   font-family: 'montserrat';
   font-display: swap;
-  src: local('Montserrat'), url('../fonts/Montserrat-Bold/Montserrat-Bold.woff') format('woff'), url('../fonts/Montserrat-Bold/Montserrat-Bold.ttf') format('truetype'), url('../fonts/Montserrat-Bold/Montserrat-Bold.svg') format('svg');
+  src: local('Montserrat-Bold'), url('../fonts/Montserrat-Bold/Montserrat-Bold.woff') format('woff'), url('../fonts/Montserrat-Bold/Montserrat-Bold.ttf') format('truetype'), url('../fonts/Montserrat-Bold/Montserrat-Bold.svg') format('svg');
   /* при использовании font-weight: bold; начертание становится более узким на 2 пикселя, чем без него, но импользовании этого же свойства в самом классе - отрисовка разная (браузер - Firefox 74)*/
   font-weight: bold;
   font-style: normal;
