@@ -1,18 +1,22 @@
-mixin color(options)
+//- Миксин имеет три параметра в объекте options
+//- name - текст наименование цвета
+//- hex  - текст HEX-номер этого цвета
+//- styleModes - модификатор для палитры цвета
+mixin color-reference(options)
   -
     let colorName = "name"
     let colorHex = "hex"
     let referenceColorClassName = "styleModes"
 
   .color-palitra
-    div(class='color-palitra__reference-color' class= options.styleModes)
+    div(class="color-palitra__reference-color" class= options.styleModes)
     .color-palitra__description-color
       span(class="color-palitra__name")= options.name
       span(class="color-palitra__hex")= options.hex
-
-- let dark = 'color-palitra__reference-color_primary-dark-color'
-- let main = 'color-palitra__reference-color_primary-main-color'
-- let light = 'color-palitra__reference-color_primary-light-color'
-- let lighten = 'color-palitra__reference-color_primary-lighten-color'
-- let cosmos = 'color-palitra__reference-color_cosmos-color'
-- let success = 'color-palitra__reference-color_success-color'
+//- Переменные хранят ссылки на классы-модификаторы палитры цвета
+- let dark = "color-palitra__reference-color_primary-dark-color"
+- let main = "color-palitra__reference-color_primary-main-color"
+- let light = "color-palitra__reference-color_primary-light-color"
+- let lighten = "color-palitra__reference-color_primary-lighten-color"
+- let cosmos = "color-palitra__reference-color_cosmos-color"
+- let success = "color-palitra__reference-color_success-color"
