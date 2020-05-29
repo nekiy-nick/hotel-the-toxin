@@ -15,8 +15,8 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '../layout/page-layout.scss';
 
 html {
-  background-color: #E5E5E5;
+  background-color: #fff;
   font-family: $main-font;
-  color: $primary-main;
-  font-size: 16px;
+  color: $primary-darker;
+  font-size: 14px;
 }

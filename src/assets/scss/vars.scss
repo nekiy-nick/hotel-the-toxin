@@ -1,5 +1,5 @@
-$main-font: 'montserrat', Helvetica, sans-serif;
-$secondary-font: 'opensans', Helvetica, sans-serif;
+$main-font: 'montserrat', Helvetica, Arial, sans-serif;
+$secondary-font: 'opensans', Helvetica, Arial, sans-serif;
 
 // Variables of Colors -- переменные цветовой палитры
 $primary-darker: rgba(31, 32, 65, 1);
@@ -7,6 +7,16 @@ $primary-dark: transparentize($primary-darker, .25);
 $primary-main: transparentize($primary-darker, .5);
 $primary-light: transparentize($primary-darker, .75);
 $primary-lighten: transparentize($primary-darker, .95);
-// с греческого космос - украшение => это цвет для украшения элементов, можно переименовать в apply
 $cosmos-color: #BC9CFF;
 $success-color: #6FCF97;
+
+//размеры шрифта
+$h1-text-size : 24px;
+$h2-text-size: 19px;
+$h3-text-size: 12px;
+$body-text-size: 14px;
+//высота строки
+$h1-line-height: 30px;
+$h2-line-height: 24px;
+$h3-line-height: 15px;
+$body-line-height: 24px;
