@@ -1,3 +1,24 @@
-mixin type-reference(name, text)
-  span(class="")= name
-  span(class="")= text
+//- Миксин имеет 4 параметра
+//- name - текст HTML тег
+//- text - текст
+//- size - модификаторы стиля для HTML тега
+//- styleText - модификаторы для текста
+mixin type-reference(options)
+  -
+    let tagName = "name"
+    let text = "text"
+    let sizeTag = "size"
+    let styleText = "styleText"
+  .type-reference
+    span(class="type-reference__tag-name" class= options.size)= options.tagName
+    span(class="type-reference__description" class= options.styleText)= options.text
+//- Переменные хранят ссылки на классы-модификаторы параметра size
+- let sizeH1 = "type-reference__tag-name_h1"
+- let sizeH2 = "type-reference__tag-name_h2"
+- let sizeH3 = "type-reference__tag-name_h3"
+- let sizeBody = "type-reference__tag-name_body"
+//- Переменные хранят ссылки на классы-модификаторы параметра styleText
+- let styleH1 = "type-reference__description_h1"
+- let styleH2 = "type-reference__description_h2"
+- let styleH3 = "type-reference__description_h3"
+- let styleBody = "type-reference__description_body"

@@ -1,0 +1,66 @@
+.type-reference {
+  display: flex;
+
+  &__tag-name {
+    color: $primary-light;
+    text-transform: capitalize;
+    font-family: $main-font;
+    flex-basis: 50px;
+    text-align: right;
+
+    &_h1 {
+      font-size: $h1-text-size;
+      line-height: $h1-line-height;
+    }
+
+    &_h2 {
+      font-size: $h2-text-size;
+      line-height: $h2-line-height;
+    }
+
+    &_h3 {
+      font-size: $h3-text-size;
+      line-height: $h3-line-height;
+    }
+
+    &_body {
+      font-size: $body-text-size;
+      line-height: $body-line-height;
+    }
+  }
+
+  &__description {
+    color: $primary-darker;
+    padding-left: 30px;
+    flex-basis: 380px;
+
+    &_h1 {
+      font-family: $secondary-font;
+      font-size: $h1-text-size;
+      line-height: $h1-line-height;
+      font-weight: bold;
+    }
+
+    &_h2 {
+      font-family: $secondary-font;
+      font-size: $h2-text-size;
+      line-height: $h2-line-height;
+      font-weight: bold;
+    }
+
+    &_h3 {
+      font-family: $main-font;
+      font-size: $h3-text-size;
+      line-height: $h3-line-height;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &_body {
+      font-family: $main-font;
+      font-size: $body-text-size;
+      color: $primary-dark;
+      line-height: $body-line-height;
+    }
+  }
+}
