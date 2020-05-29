@@ -1,20 +1,91 @@
 extends ../../layout/page-layout
+
+block variables
+  - let title = "Colors and Type";
+  - let description = "";
+  - let keywords = "";
+
 block head
+
 block content
-  .wrapper
-    .content-wrapper
-      include ../../blocks/color-reference/color-reference
-      include ../../blocks/type-reference/type-reference
-      .wrapper-block-color
-        +color('dark shade 100%', '#1f2041', '')
-        +color('dark shade 75%', '#1f2041', '_primary-dark-color')
-        +color('dark shade 50%', '#1f2041', '_primary-main-color')
-        +color('dark shade 25%', '#1f2041', '_primary-light-color')
-        +color('dark shade 5%', '#1f2041', '_primary-lighten-color')
-        +color('purple', '#bc9cff' , '_cosmos-color')
-        +color('green', '#6fcf97', '_success')
-      .wrapper-block-type
-        +type-reference('h1', 'this one is the sub-section or widget title')
-        +type-reference('h2', 'this one is the sub-section or widget title')
-        +type-reference('h3', 'this one is the sub-section or widget title')
-        +type-reference('body', 'this one is the sub-section or widget title')
+
+  .content-wrapper
+    include ../../blocks/color-reference/color-reference
+    include ../../blocks/type-reference/type-reference
+    
+    .wrapper-block-color
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "dark shade 100%", 
+          hex : "#1f2041"
+          })
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "dark shade 75%", 
+          hex : "#1f2041", 
+          styleModes: dark})
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "dark shade 50%", 
+          hex : "#1f2041", 
+          styleModes: main})
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "dark shade 25%", 
+          hex : "#1f2041", 
+          styleModes: light})
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "dark shade 5%", 
+          hex : "#1f2041", 
+          styleModes: lighten})
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "purple",  
+          hex : "#bc9cff", 
+          styleModes: cosmos})
+
+      .wrapper-block-color_item
+        +color-reference({
+          name : "green", 
+          hex : "#6fcf97", 
+          styleModes: success})
+
+
+    .wrapper-block-type
+
+      .wrapper-block-type_item
+        +type-reference({
+          tagName : "h1", 
+          text : "This one is the sub-section or widget title", 
+          size : sizeH1, 
+          styleText : styleH1
+          })
+
+      .wrapper-block-type_item    
+        +type-reference({
+          tagName : "h2", 
+          text : "Next one is the item title inside widgets", 
+          size : sizeH2, 
+          styleText : styleH2
+          })
+
+      .wrapper-block-type_item    
+        +type-reference({
+          tagName : "h3", 
+          text : "This is a label or cta text", 
+          size : sizeH3, 
+          styleText : styleH3})
+
+      .wrapper-block-type_item    
+        +type-reference({
+          tagName : "body", 
+          text : "This is the body text which is used for most of the design, like paragraphs, lists, etc.", size : sizeBody, 
+          styleText : styleBody
+          })
