@@ -1,0 +1,21 @@
+.button-link {
+  // текстовые стили
+  font-family: $main-font;
+  font-size: $h3-text-size;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $cosmos-color;
+  // стили отображения кнопки
+  background: transparent;
+  outline: none;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+  // для лучшего взаимодействия пользователя
+  // border: 10px solid transparent;
+  // background-clip: border-box;
+
+  &_gray {
+    color: $primary-main;
+  }
+}
