@@ -1,0 +1,57 @@
+.radio-button {
+  display: inline-flex;
+  align-items: center;
+
+  &__input:checked + &__btn:before {
+    opacity: 1;
+  }
+
+  &__input:checked + &__btn {
+    border-color: $cosmos-color;
+  }
+
+  &__input:checked ~ &__text{
+    color: $primary-darker;
+  }
+
+  &__input {
+    appearance: none;
+  }
+
+  &__btn {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $primary-light;
+    position: relative;
+    margin-right: 10px;
+    
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: linear-gradient(rgba(188, 156, 255, 100%), rgba(139, 164, 249, 100%));
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    font-family: $main-font;
+    @include text-view($body-text-size, 18px);
+    color: $primary-main;
+    letter-spacing: 1px;
+  }
+
+  // т.к. один радио-баттон не логично - здесь отступ для такого же соседа
+  & + & {
+    margin-left: 20px;
+  }
+}
