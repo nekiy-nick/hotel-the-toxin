@@ -1,0 +1,55 @@
+.checkbox-button {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    // скрытие стандартного чекбокса (через display: none логика checked пропадает)
+    appearance: none;
+
+    &:checked {
+      + .checkbox-button__checkbox::before {
+        opacity: 1;
+      }
+
+      + .checkbox-button__checkbox {
+        border-color: $cosmos-color;
+      }
+    }
+  }
+
+  &__checkbox {
+      cursor: pointer;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: solid 1px $primary-light;
+      border-radius: 4px;
+      position: relative;
+      margin-right: 10px;
+
+    &::before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      font-family: 'Material Icons';
+      content: '\e5ca';
+      font-size: 14px;
+      color: transparent;         
+      background: linear-gradient(180deg, $cosmos-color 0%, $cosmos-gradient-color 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    font-family: $main-font;
+    font-size: $body-text-size;
+    color: $primary-main;
+    // возможно лишнее правило
+    letter-spacing: 1px;
+  }
+}

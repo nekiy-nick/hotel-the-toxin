@@ -1,0 +1,8 @@
+mixin checkbox-button(options)
+  -
+    let text = "checkbox-text"
+
+  label(class="checkbox-button")
+    input(class="checkbox-button__input" type="checkbox")
+    div(class="checkbox-button__checkbox")
+    span(class="checkbox-button__text")= options.text
