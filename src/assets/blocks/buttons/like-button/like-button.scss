@@ -1,0 +1,36 @@
+.like-button {
+  cursor: pointer;  
+  width: 40px;
+  height: 20px;
+  border: solid 1px $primary-light;
+  border-radius: 10px;
+  position: relative;
+  color: $primary-light;
+  font-size: 10px;
+  font-family: $main-font;
+  text-align: center;
+  padding-left: 10px;
+
+  // heart
+  &:before {
+    font-family: 'Material Icons';
+    content: '\e87e';
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    margin-right: 10px;
+  }
+}
+
+.like-button_active {
+  color: $cosmos-color;
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  @include border-gradient($cosmos-color, $cosmos-gradient-color);
+
+  &:before {
+    content: '\e87d';
+  }
+}
