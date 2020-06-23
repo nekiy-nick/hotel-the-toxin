@@ -1,0 +1,8 @@
+mixin toggle(options)
+  -
+    let text = "toggle-text"
+
+  label(class="toggle")
+    input(class="toggle__input" type="checkbox")
+    span(class="toggle__checkbox")
+    span(class="toggle__text")= options.text    
