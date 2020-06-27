@@ -1,0 +1,24 @@
+mixin expandable-checkbox-list(options)
+  -
+    let headText = "header text"
+    let checkbox = "checkbox block"
+  .expandable-checkbox-list
+    .expandable-checkbox-list__head
+      include ../h3-header/h3-header
+      +h3({text : 'expandable checkbox list'})
+      .expandable-checkbox-list__drop-arrow
+        i(class="material-icons") expand_more
+        //- тело выпадающего чекбокс листа
+    .expandable-checkbox-list__body
+      //- возможно нужно здесь использовать цикл  
+      include ../buttons/checkbox-button/checkbox-button
+      //- {checkbox : +checkbox-button({text : options.checkbox})}
+      +checkbox-button({text : 'Завтрак'})
+      +checkbox-button({text : 'Письменный стол'})
+      +checkbox-button({text : 'Стул для кормления'})
+      +checkbox-button({text : 'Кроватка'})
+      +checkbox-button({text : 'Телевизор'})
+      +checkbox-button({text : 'Шампунь'})
+      +checkbox-button({text : 'Телевизор'})
+      +checkbox-button({text : 'Шампунь'})
+      +checkbox-button({text : options.checkbox})
