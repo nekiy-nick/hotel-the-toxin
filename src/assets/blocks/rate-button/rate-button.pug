@@ -1,0 +1,7 @@
+mixin rate-button(options)
+  - let count = 1
+
+  ul(class="rating")
+    while count < 6
+      li(class="rating__item" data-rating = count++)
+        i(class="rating__star material-icons") star_border
