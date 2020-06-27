@@ -1,0 +1,54 @@
+.feedback {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 680px;
+
+  &__user {
+    display: flex;
+    margin-bottom: 10px;
+
+    &-foto {
+      width: 46px;
+      height: 46px;
+      border-radius: 23px;
+    }
+
+    &-name {
+      font-family: $main-font;
+      color: $primary-dark;
+      font-size: $body-text-size;
+      text-transform: capitalize;
+      line-height: $body-line-height;
+
+      &-wrapper {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        padding-left: 10px;
+        height: 100%;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__date-comment {
+    font-family: $main-font;
+    color: $primary-dark;
+    font-size: $body-text-size;
+    letter-spacing: 1px;
+    line-height: $body-line-height;
+  }
+
+  &__mark {
+    display: flex;
+  }
+
+  &__comment {
+    padding-left: 16px;
+    letter-spacing: 1px;
+    font-family: $main-font;
+    color: $primary-dark;
+    font-size: $body-text-size;
+    line-height: $body-line-height;
+  }
+}

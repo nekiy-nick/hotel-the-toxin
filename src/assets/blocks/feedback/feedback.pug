@@ -1,0 +1,23 @@
+mixin feedback(options)
+  -
+    let userFoto = "user foto"
+    let userName = "user name"
+    let comment = "user comment"
+    let date = "date comment"
+    let like = "like count"
+
+  .feedback
+    .feedback__user
+      img(class="feedback__user-foto", src=options.userFoto, alt="user foto")
+      .feedback__user-name-wrapper
+        h4(class="feedback__user-name")= options.userName
+        span(class="feedback__date-comment")= options.date
+        
+    .feedback__mark
+      include ../buttons/like-button/like-button
+      div
+        +like-button({count : options.like})
+      p(class="feedback__comment")= options.comment
+    
+      
+      
