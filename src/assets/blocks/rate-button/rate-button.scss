@@ -1,22 +1,12 @@
 .rating {
   display: flex;
   list-style: none;
-  background: hsla(150, 60%, 90%, .8);
-  max-width: 120px;
-  &__item {
-
-  }
 
   &__star {
     cursor: pointer;
-
     color: transparent;
     background: linear-gradient(180deg, $cosmos-color 0%, $cosmos-gradient-color 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    &_active {
-
-    }
   }
 }
