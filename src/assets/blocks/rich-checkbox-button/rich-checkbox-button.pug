@@ -1,0 +1,13 @@
+mixin rich-checkbox-button(options)
+  -
+      let text = "rich-checkbox-text"
+      let header = "block-header"
+  .rich-checkbox-button
+    h3(class="rich-checkbox-button__header")= options.header
+    for item in options.items
+      label(class="rich-checkbox-button__items-wrapper rich-checkbox-item")
+        input(class="rich-checkbox-item__input" type="checkbox")
+        div(class="rich-checkbox-item__checkbox")
+        div(class="rich-checkbox-item__text-wrapper")
+          h4(class="rich-checkbox-item__header")= item.name
+          span(class="rich-checkbox-item__text")= item.text
