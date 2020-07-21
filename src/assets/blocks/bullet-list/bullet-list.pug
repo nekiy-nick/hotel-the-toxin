@@ -1,0 +1,11 @@
+mixin bullet-list(options)
+  -
+    let header = "bullet-list header"
+    
+  .bullet-list
+    if header
+      h3(class="bullet-list__header")= options.header
+
+    ul(class="bullet-list__items-wrapper")
+      for item in options.items
+        li(class="bullet-list__item")= item.text

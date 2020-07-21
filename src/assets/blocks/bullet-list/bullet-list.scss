@@ -1,0 +1,41 @@
+.bullet-list {
+
+  &__header {
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: $h3-text-size;
+  text-transform: uppercase;
+  color: $primary-darker;
+  margin-bottom: 12px;
+  }
+
+  &__items-wrapper {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+
+  &__item {
+    font-family: $main-font;
+    font-size: $body-text-size;
+    color: $primary-dark;
+    line-height: $body-line-height;
+    letter-spacing: 1px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: $primary-light;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 12px;
+  }
+}
