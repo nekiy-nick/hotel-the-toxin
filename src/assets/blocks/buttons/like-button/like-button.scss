@@ -1,5 +1,6 @@
 .like-button {
-  cursor: pointer;  
+  cursor: pointer;
+  // кнопка ломается при display flex у родителя нужно поколдовать с шириной
   width: 40px;
   height: 20px;
   border: solid 1px $primary-light;
