@@ -18,4 +18,8 @@
   &_gray {
     color: $primary-main;
   }
+
+  &_hidden {
+    visibility: hidden;
+  }
 }
