@@ -1,0 +1,24 @@
+mixin input-text-field(options)
+  if(!options)
+    - options = {}
+  -
+    let description = "header"
+    let placeholder = "placeholder"
+    let name = "name"
+    let mode = "modifier"
+
+  if(!options.placeholder)
+    - options.placeholder = "Input text"
+
+  div(class="input-text-field") 
+    if(options.description !== undefined)
+      h3(class="input-text-field__header")=options.description
+    case options.mode
+      when 'masked' 
+        input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type="text" placeholder=options.placeholder name=options.name)
+      when 'subscribe'
+        div(class="input-text-field__subscribe-wrapper")
+          input(class="input-text-field__input input-text-field__input_subscribe" type="text" placeholder=options.placeholder name=options.name)
+          button(class="input-text-field__button")
+      default
+        input(class="input-text-field__input" type="text" placeholder=options.placeholder name=options.name)  

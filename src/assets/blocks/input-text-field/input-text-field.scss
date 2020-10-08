@@ -1,0 +1,93 @@
+@import '../../scss/mixin.scss';
+
+.input-text-field {
+  display: flex;
+  flex-flow: column;
+  min-width: 266px;
+  max-width: 320px;
+
+  &__subscribe-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+    max-width: 266px;
+    height: 44px;
+    border: 1px solid $primary-light;
+    border-radius: 6px;
+    transition: border-color .2s ease-in-out;
+    outline: none;
+
+    &:hover, &:focus-within {
+      border-color: $primary-main;
+    }
+
+    &:hover .input-text-field__input {
+      color: $primary-dark;
+    }
+  }
+
+  &__header {
+    font-family: $main-font;
+    font-size: $h3-text-size;
+    color: $primary-darker;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+
+  &__input {
+    font-size: $body-text-size;
+    font-family: $main-font;
+    color: $primary-light;
+    padding-left: 15px;
+    border-radius: 6px;
+    width: 100%;
+    height: 44px;
+    border: 1px solid $primary-light;
+    transition-timing-function: ease-in-out;
+    transition-property: color, border-color;
+    transition-duration: .2s;
+    outline: none;
+
+    &:hover, &:focus {
+      color: $primary-dark;
+      border-color: $primary-main;
+    }
+
+    // расходится цвет текста по макету при фокусе (не работает с прозрачностью)
+    &_masked {
+      letter-spacing: 1.4px;
+    }
+
+    &_subscribe {
+      border: none;
+      border-radius: 0px;
+    }   
+  }
+
+  &__button {
+    position: relative;
+    background-color: #fff;
+    outline: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+
+    &:after {
+      font-family: 'Material Icons';
+      content: "\e5c8";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 24px;
+      transform: translate(-50%, -50%);
+      @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
+    }
+
+    &:focus {
+      outline: 1px dashed $primary-dark;
+    }
+  }
+}
