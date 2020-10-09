@@ -1,7 +1,7 @@
 mixin rate-button(options)
   - let count = 0
 
-  ul(class="rating")
+  ul(class="rating js-rating")
     while count < 5
       li(class="rating__item" data-rating = count++)
         span(class="rating__star material-icons") star_border
