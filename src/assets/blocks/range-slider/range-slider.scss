@@ -1,0 +1,76 @@
+.range-slider {
+  max-width: 266px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-family: $main-font;
+    color: $primary-darker;
+    font-size: $h3-text-size;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__span {
+    font-size: $h3-text-size;
+    font-family: $main-font;
+    color: $primary-main;
+
+    &_value {
+      position: relative;
+      margin-right: 10px;
+
+      &:after {
+        content: '₽';
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__container {
+    margin-top: -20px;
+  }
+}
+
+.irs--flat .irs-line {
+  width: 100%;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid $primary-light;
+  height: 6px;
+  border-radius: 4px;
+}
+
+.irs--flat .irs-bar {
+  height: 6px;
+  border: none;
+  background: linear-gradient($success-color, $cosmos-gradient-color-transparent);
+}
+
+.irs--flat .irs-handle{
+  width: 0;
+  top: 20px;
+}
+
+.irs--flat .irs-handle > i:first-child {
+  background: linear-gradient($success-color, $cosmos-gradient-color-transparent);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background: linear-gradient($success-color, $cosmos-gradient-color-transparent);
+  }
+}
