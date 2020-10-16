@@ -1,11 +1,12 @@
 mixin icon-text-list(options)
-  -
-    let icon = "icon"
-    let headerText = "header text"
-    let description = "description text"
-
-  .icon-text-list
-    i(class="material-icons icon-text-list__icon")= options.icon
-    .icon-text-list__text-wrapper
-      h4(class="icon-text-list__header")= options.headerText
-      span(class="icon-text-list__description")= options.description
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+  
+  for item in options.items
+    .icon-text-list
+      span(class="material-icons icon-text-list__icon")= item.icon
+      .icon-text-list__text-wrapper
+        h4(class="icon-text-list__header")= item.headerText
+        span(class="icon-text-list__description")= item.description
