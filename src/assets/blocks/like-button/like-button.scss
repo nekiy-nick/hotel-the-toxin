@@ -1,7 +1,6 @@
 .like-button {
   cursor: pointer;
-  // кнопка ломается при display flex у родителя нужно поколдовать с шириной
-  width: 40px;
+  min-width: 40px;
   height: 20px;
   border: solid 1px $primary-light;
   border-radius: 10px;
@@ -10,9 +9,8 @@
   font-size: 10px;
   font-family: $main-font;
   text-align: center;
-  padding-left: 10px;
+  padding: 0 10px 0 20px;
 
-  // heart
   &:before {
     font-family: 'Material Icons';
     content: '\e87e';
@@ -20,18 +18,15 @@
     top: 50%;
     left: 4px;
     transform: translateY(-50%);
-    margin-right: 10px;
   }
-}
 
-.like-button_active {
-  color: $cosmos-color;
-  border: 1px solid transparent;
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  @include border-gradient($cosmos-color, $cosmos-gradient-color);
+  &_active {
+    color: $cosmos-color;
+    @include border-gradient-size(1px);
+    @include border-gradient($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
 
-  &:before {
-    content: '\e87d';
+    &:before {
+      content: '\e87d';
+    }
   }
 }
