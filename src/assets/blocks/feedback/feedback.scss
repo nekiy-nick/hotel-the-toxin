@@ -1,16 +1,16 @@
 .feedback {
-  display: flex;
-  flex-flow: column wrap;
-  max-width: 680px;
+  max-width: 770px;
+  padding: 0 2rem;
 
   &__user {
     display: flex;
     margin-bottom: 10px;
 
-    &-foto {
+    &-photo {
       width: 46px;
       height: 46px;
       border-radius: 23px;
+      background-color: #fff;
     }
 
     &-name {
@@ -41,10 +41,14 @@
 
   &__mark {
     display: flex;
+
+    & .like-button {
+      flex: 0 1 40px;
+    }
   }
 
   &__comment {
-    padding-left: 16px;
+    padding-left: calc(1rem + 2px);
     letter-spacing: 1px;
     font-family: $main-font;
     color: $primary-dark;
