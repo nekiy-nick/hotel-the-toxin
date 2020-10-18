@@ -1,5 +1,10 @@
 mixin like-button(options)
+
+  if(!options)
+    - options = {}
+  if(!options.count)
+    - options.count = 0
   -
     let count = "count-like"
-    let mode = "modifier"
-  button(class="like-button")= options.count
+
+  button(class="like-button js-like-button")= options.count
