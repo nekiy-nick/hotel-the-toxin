@@ -1,6 +1,7 @@
 // модуль path нужен для коректного поиска пути точки выхода
 const path = require("path");
 const fs = require("fs");
+const webpack = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -27,8 +28,10 @@ module.exports = {
   },
 
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
     // module: `${PATHS.src}/your-module.js`,
+    // точка входа для страницы colors-and-types
+    //colorsAndType: `${PATHS.src}/assets/pages/colors-and-types/colors-and-types.js`
   },
   output: {
     // [name] нужен чтобы на выходе не было коллизий с именами, т.к. может быть несколько точек входа
@@ -139,6 +142,22 @@ module.exports = {
     ]),
     new CleanWebpackPlugin(),
     
+    // проба разбить на чанки страницы UI kit
+    // new HtmlWebpackPlugin({
+    //   inject: false,
+    //   chunks: ['colorsAndType'],
+    //   filename: './pages/colors-and-types/colors-and-types.html',
+    //   template: `${PAGES_DIR}/assets/pages/colors-and-types/colors-and-types.pug`,
+    // }),
+
+    // подключение jqery lib
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
+
+
     ...PAGES.map(
       page => 
         new HtmlWebpackPlugin({
