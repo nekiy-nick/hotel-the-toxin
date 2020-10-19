@@ -10,6 +10,10 @@ $primary-lighten: transparentize($primary-darker, .95);
 $cosmos-color: #BC9CFF;
 $success-color: #6FCF97;
 
+$cosmos-gradient-color: rgb(55%, 64%, 100%);
+$cosmos-gradient-color-transparent: transparentize($cosmos-gradient-color, .5);
+$cosmos-color-transparent: transparentize($cosmos-color, .5);
+
 //размеры шрифта
 $h1-text-size : 24px;
 $h2-text-size: 19px;
