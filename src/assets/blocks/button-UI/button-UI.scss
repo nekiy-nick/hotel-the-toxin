@@ -1,13 +1,6 @@
 @import '../../scss/mixin.scss';
-
 .button-UI {
-  // стили для текста
-  font-family: $main-font;
-  font-weight: bold;
-  font-size: $h3-text-size;
-  text-transform: uppercase;
-  color: #fff;
-  // настройка для отображения кнопки
+  @include button-text(#fff);
   outline: none;
   border: none;
   cursor: pointer;
@@ -17,28 +10,30 @@
   align-self: center;
   padding: 12px 18px;
   border-radius: 22px;
+  transition: box-shadow .2s ease-in-out;
   
-    &:hover {
-      @include element-gradient($cosmos-color-transparent,$cosmos-gradient-color-transparent);
-    }
+  &:hover {
+    @include element-gradient($cosmos-color-transparent, $cosmos-gradient-color-transparent);
+  }
 
-  // модификатор's дефолтной кнопки
+  &:focus {
+    box-shadow: 1px 1px 4px 1px $success-color;
+  }
+
   &_transparent {
     color: $cosmos-color;
-    border: 2px solid transparent;
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    @include border-gradient($cosmos-color, $cosmos-gradient-color);
-    height: 43px;    
+    padding: 12px 16px;
+    @include border-gradient-size(2px);
+    @include border-gradient($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg); 
 
     &:hover {
-      @include border-gradient($cosmos-color-transparent, $cosmos-gradient-color-transparent);
+      @include border-gradient($cosmos-color-transparent, 0%, $cosmos-gradient-color-transparent, 100%, 180deg);
     }
   }
 
   &_long {
     letter-spacing: 1px;
-    min-width: 300px;
+    min-width: 320px;
     position: relative;
 
     &:after {
@@ -46,29 +41,9 @@
       content: '\e5c8';
       position: absolute;
       top: 50%;
-      right: 0;
+      right: -4px;
       transform: translate(-50%, -50%);
       font-size: $h1-text-size;
     }
   }
 }
-
-// Далее эксперименты с интерактивностью кнопок
-
-// a:hover {
-//   opacity: .7;
-// }
-
-// a:focus, input:focus {
-//   outline: 4px solid currentColor;
-//   outline-offset: 2px;
-// }
-
-// button:focus {
-   // box-shadow: 5px 5px 10px rgba(0, 0, 0, .35%);
-   // box-shadow: 0 0 0 5px rgba(0, 0, 0, .35%);
-// }
-
-// ::-moz-focus-inner {
-  // border: 0;
-// }
