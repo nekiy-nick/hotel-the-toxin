@@ -1,7 +1,3 @@
 .h3-header {
-  font-family: $main-font;
-  color: $primary-darker;
-  font-size: $h3-text-size;
-  // line-height: $h3-line-height;
-  text-transform: uppercase;
+  @include h3-header;
 }
