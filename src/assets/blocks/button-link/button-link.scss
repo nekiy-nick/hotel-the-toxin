@@ -1,21 +1,23 @@
 .button-link {
-  font-family: $main-font;
-  font-size: $h3-text-size;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $cosmos-color;
+  @include button-text($cosmos-color);
   background: transparent;
   outline: none;
   border: none;
   cursor: pointer;
+  padding: 10px;
+  transition: text-shadow .2s ease-in-out;
+  align-self: center;
 
   &_gray {
     color: $primary-main;
   }
 
   &:focus {
-    outline: 1px solid currentColor;
+    outline: auto;
+    text-shadow: 2px 2px 2px transparent, 
+    4px 4px 4px currentColor;
   }
+
   &:disabled {
     visibility: hidden;
   }
