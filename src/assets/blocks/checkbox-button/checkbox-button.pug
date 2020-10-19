@@ -1,8 +1,13 @@
 mixin checkbox-button(options)
+  if(!options)
+    - options = {}
+
+  if(!options.text)
+    - options.text = "this is checkbox"
   -
     let text = "checkbox-text"
 
   label(class="checkbox-button")
-    input(class="checkbox-button__input" type="checkbox")
+    input(class="checkbox-button__input" tabindex=0 type="checkbox")
     div(class="checkbox-button__checkbox")
     span(class="checkbox-button__text")= options.text
