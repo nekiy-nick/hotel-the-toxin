@@ -1,0 +1,44 @@
+// глобальный миксин для текста
+@mixin text-view($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// миксин для заголовка h3
+@mixin h3-header() {
+  font-family: $main-font;
+  color: $primary-darker;
+  font-size: $h3-text-size;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+// текст кнопок
+@mixin button-text($color) {
+  color: $color;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: $h3-text-size;
+  text-transform: uppercase;
+}
+
+// градиент кнопок
+@mixin element-gradient($first-color, $second-color) {
+  background-image: linear-gradient(180deg, $first-color, $second-color);
+}
+@mixin border-gradient($first-color, $first-color-transparent, $second-color, $second-color-transparent, $degree) {
+  background-image: linear-gradient(white, white), linear-gradient($degree, $first-color $first-color-transparent, $second-color $second-color-transparent);
+};
+
+@mixin border-gradient-size($border-width) {
+  border: $border-width solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+@mixin gradient-text($first-color, $first-color-transparent, $second-color, $second-color-transparent, $degree) {
+  color: transparent;
+  background: linear-gradient($degree, $first-color $first-color-transparent, $second-color $second-color-transparent);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
