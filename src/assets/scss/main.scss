@@ -1,7 +1,10 @@
-
 // подключение fontawesome из npm модуля
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
+// подключение material-icons из npm модуля
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
 
 @import 'reset.scss';
 @import 'fonts.scss';
@@ -9,8 +12,10 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 // импорт файлов проекта
 @import '../blocks/blocks';
+
 // импорт блоков-обёрток для страниц
-@import '../pages/colors-and-types/colors-and-types.scss';
+// @import '../pages/colors-and-types/colors-and-types.scss';
+@import '../pages/form-elements/form-elements.scss';
 // импорт стилей для шаблона
 @import '../layout/page-layout.scss';
 
