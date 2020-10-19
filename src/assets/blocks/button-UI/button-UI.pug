@@ -1,9 +1,19 @@
 mixin button-UI(options)
+  if(!options)
+    - options = {}
+
+  if(!options.text)
+    - options.text = "click me"
+
+  if(!options.type)
+    - options.type = "button"
+  
   -
     let text = "text"
     let mode = "modifier"
+    let type = "button type"
 
-  button(type="button" class="button-UI" class=options.mode)= options.text
+  button(type=options.type class="button-UI" class=options.mode)= options.text
 
-- let btnUiTransperent = "button-UI_transparent"
-- let btnUiLong = "button-UI_long"
+- let transperent = "button-UI_transparent"
+- let long = "button-UI_long"
