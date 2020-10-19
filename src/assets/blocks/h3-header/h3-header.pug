@@ -1,4 +1,8 @@
-mixin h3(options)
+mixin h3-header(options)
+  if(!options)
+    - options = {}
+  if(!options.text)
+    - options.text = "h3 header"
   -
     let text ="content-text"
   h3(class="h3-header")=options.text
