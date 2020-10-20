@@ -7,7 +7,6 @@ let nowYear = String(now.getFullYear())
 // ошибки в месяцах можно выбрать 00 и 13-19
 
 $.mask.definitions['d']='[0-3]';
-console.log($.mask.definitions['d'])
 $.mask.definitions['D']='[0-9]';
 $.mask.definitions['m']='[0-1]';
 $.mask.definitions['M']='[0-9]';
