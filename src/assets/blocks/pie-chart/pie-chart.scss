@@ -1,0 +1,136 @@
+// color vars
+$great-linear-gradient: linear-gradient(hsla(43, 100%, 81%, 1), hsla(18, 100%, 81%, 1));
+$good-linear-gradient: linear-gradient(hsla(145, 50%, 62%, 1), hsla(191, 76%, 66%, 1));
+$satisfied-linear-gradient: linear-gradient(hsla(259, 100%, 81%, 1), hsla(227, 91%, 76%, 1));
+$bad-linear-gradient: linear-gradient(hsla(0, 0%, 57%, 1), hsla(227, 31%, 35%, 1));
+
+.pie-chart {
+  // background: hsla(10, 10%, 5%, .3);
+
+  &__header {
+    text-align: center;
+    font-family: $secondary-font;
+    font-size: $h2-text-size;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $primary-darker;
+  }
+
+  &__body {
+    display: flex;
+    // background: hsla(10, 10%, 5%, .3);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__feedback-wrapper {
+    list-style: none;
+    padding-left: 30px;
+  }
+
+  &__feedback {
+    font-family: $main-font;
+    font-size: $body-text-size;
+    color: $primary-dark;
+    letter-spacing: 1px;
+    position: relative;
+    max-width: 800px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      transform: translateY(-50%);
+      background-color: $success-color;
+    }
+    // модификаторы bullet-point у отзыва
+    &_great {
+      &::before {
+        background: $great-linear-gradient;
+      }
+    }
+
+    &_good {
+      &::before {
+        background: $good-linear-gradient;
+      }
+    }
+
+    &_satisfied {
+      &::before {
+        background: $satisfied-linear-gradient;
+      }
+    }
+
+    &_bad {
+      &::before {
+        background: $bad-linear-gradient;
+      }
+    }
+  }
+
+  &__diagram-wrapper {
+    position: relative;
+  }
+
+  &__feedback + &__feedback {
+    margin-top: 8px;
+  }
+}
+
+.diagram {
+
+  &__text-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $cosmos-color;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: $main-font;
+    font-size: $h3-text-size;
+    font-weight: bold;
+
+    &::first-line{
+      font-size: $h1-text-size;
+      font-family: $secondary-font;
+    }
+  }
+  
+  &__unit {
+    fill: none;
+    stroke-width: 2;
+
+    &_max {
+      stroke-width: 6;
+    }   
+
+    &_great {
+      stroke: gold;
+      stroke-dasharray: 35 100;
+    }
+
+    &_good {
+      stroke: $success-color;
+      stroke-dasharray: 0 100;
+      stroke-dashoffset: -50%;
+    }
+
+    &_satisfied {
+      stroke: $cosmos-color;
+      stroke-dasharray: 21 100;
+      stroke-dashoffset: calc(-50% + 46px);
+    }
+
+    &_bad {
+      stroke: $primary-darker;
+      stroke-dasharray: 0 100;
+      stroke-dashoffset: -30;
+    }
+  }
+}
