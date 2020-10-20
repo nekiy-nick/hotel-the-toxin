@@ -1,17 +1,15 @@
 .bullet-list {
+  max-width: 300px;
+  padding: 0 10px;
 
   &__header {
-  font-family: $main-font;
-  font-weight: bold;
-  font-size: $h3-text-size;
-  text-transform: uppercase;
-  color: $primary-darker;
-  margin-bottom: 12px;
+  @include h3-header();
+  margin-bottom: 14px;
   }
 
   &__items-wrapper {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 22px;
   }
 
 
@@ -26,7 +24,7 @@
     &::before {
       content: '';
       position: absolute;
-      left: -20px;
+      left: -22px;
       top: 6px;
       width: 10px;
       height: 10px;
@@ -36,6 +34,6 @@
   }
 
   &__item + &__item {
-    margin-top: 12px;
+    margin-top: 10px;
   }
 }
