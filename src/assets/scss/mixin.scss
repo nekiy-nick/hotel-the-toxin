@@ -13,6 +13,14 @@
   font-weight: bold;
 }
 
+@mixin h2-header() {
+  font-family: $secondary-font;
+  color: $primary-darker;
+  font-size: $h1-text-size;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 // текст кнопок
 @mixin button-text($color) {
   color: $color;
@@ -46,4 +54,19 @@
   background: linear-gradient($degree, $first-color $first-color-transparent, $second-color $second-color-transparent);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+// Cards
+@mixin card-block() {
+  max-width: 380px;
+  background-color: #fff;
+  padding: 40px 30px 30px;
+  box-shadow: 
+  2px 0px 20px -5px $primary-light,
+  // тень снизу
+  0px 2px 20px -5px $primary-light,
+  //  тень слева
+  -2px 0px 20px -5px $primary-light,
+  // тень сверху
+  0px -2px 20px -5px $primary-light;
 }
