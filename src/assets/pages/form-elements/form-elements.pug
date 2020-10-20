@@ -1,0 +1,296 @@
+extends ../../layout/page-layout
+
+include ../../blocks/h3-header/h3-header
+
+block variables
+  - let title = "Form elements";
+  - let description = "";
+  - let keywords = "";
+
+block head
+  //- link(rel="stylesheet" src="./form-elements.scss")  
+block content
+
+  .content-wrapper
+    div(class="frame-row first-row")
+
+      div(class="frame-column")
+        
+          include ../../blocks/input-text-field/input-text-field
+          +input-text-field({
+            description: "text field",
+            placeholder: "Email",
+            name: "email"
+          })
+
+          +input-text-field({
+            description: "text field",
+            placeholder: "This is pretty awesome",
+            name: "email"
+          })
+          
+          include ../../blocks/dropdown/dropdown
+          +dropdown({
+            name: 'dropdown',
+            header: 'Сколько гостей',
+            dataHeaderDescription: 'guests',
+            buttons: true,
+            mode: btnMode,
+            items: [ 
+              { name: 'взрослые' }, 
+              { name: 'дети' }, 
+              { name: 'младенцы' },
+            ]
+          })
+
+          +input-text-field({
+            description: "masked text field",
+            placeholder: "ДД.ММ.ГГГГ",
+            name: "date", 
+            mode: 'masked'
+          })
+
+          div(class="date-dropdown-wrapper")
+            +dropdown({
+              name: "date dropdown",
+              size: small,
+              mode: 'date-dropdown',
+            })
+            +dropdown({
+              name: "date dropdown",
+              size: small,
+              mode: 'date-dropdown',
+            })
+
+          +dropdown({
+              name: "filter date dropdown",
+              size: medium,
+              mode: 'filter-date-dropdown',
+              firstFilterDateSpan: "19 авг",
+              seconFilterdDateSpan: "27 авг"
+            })  
+            
+          //- блок емейл подписка (модификатор инпута)
+          +input-text-field({
+            description: "subscription text field",
+            placeholder: "Email",
+            name: "email",
+            mode: 'subscribe'
+          })
+
+      div(class="frame-column")       
+
+        div(class="checkbox-wrapper")
+          include ../../blocks/checkbox-button/checkbox-button
+          include ../../blocks/radio-button/radio-button
+
+          +h3-header({text: "checkbox buttons"})
+          
+          +checkbox-button({text : "Можно курить"})
+          //- +checkbox-button
+          +checkbox-button({text : "Можно с питомцами"})
+          +checkbox-button({text : "Можно пригласить гостей (до 10 человек)"})      
+        
+            //- RADIO BTNS
+        div(class="radioBtn-wrapper")    
+          +h3-header({text : "radio buttons"})
+          +radio-button({text : "Мужчина", nameRadioBtn: "sex", valueRadioBtn : "man"})
+          +radio-button({text : "Женщина", nameRadioBtn: "sex", valueRadioBtn : "woman"})
+
+        div(class="toggle-wrapper")
+          include ../../blocks/toggle/toggle
+          +h3-header({text : "toggle"})
+          +toggle({text : "Получать спецпредложения"})
+
+        div(class="likeBtn-wrapper")
+          include ../../blocks/like-button/like-button
+          +h3-header({text : "like button"})
+          +like-button({count : 999})
+          +like-button({count : 245})
+          +like-button({count : 99})
+          +like-button({count : 55})
+          +like-button({count : 10245})
+
+        div(class="rateBtn-wrapper")
+          include ../../blocks/rate-button/rate-button
+          +h3-header({text : "rate-button"})
+          +rate-button({})
+          +rate-button({})
+
+      div(class="frame-column")
+        div(class="slider-wrapper")
+          include ../../blocks/range-slider/range-slider
+          +range-slider({
+            name: "range slider",
+            min : "5 000",
+            max : "10 000"
+          })
+
+        div(class="buttons-wrapper")
+          //- подключение миксина блока кнопки
+          include ../../blocks/button-UI/button-UI
+          +h3-header({text : "buttons"})
+          +button-UI({text : ""})
+          +button-UI({text : "click me", mode : transperent})
+          include ../../blocks/button-link/button-link
+          +button-link({text : "click me"})
+          +button-link({text : "click me", mode: linkGray})
+          +button-UI({text : "перейти к оплате", mode : long})
+
+        div(class="pagination-wrapper")
+          +h3-header({text : "pagination"})
+          include ../../blocks/pagination/pagination
+
+          +pagination({
+            paginationList : {
+              items: {
+                div
+              }
+            }
+          })
+
+    div(class="frame-row second-row")
+
+      div(class="frame-column")
+        +dropdown({
+          name : 'dropdown',
+          header : 'Удобства номера',
+          dataHeaderDescription: 'apartments',
+          items: [
+            {name: 'спальни'},
+            {name: 'кровати'},
+            {name: 'ванные комнаты'}
+            ]
+          })
+      div(class="frame-column")
+        +dropdown({
+          name : 'dropdown',
+          buttons : true,  
+          header : 'Сколько гостей', 
+          items: [ 
+            {name: 'взрослые'}, 
+            {name: 'дети'}, 
+            {name: 'младенцы'},
+          ]
+        })
+      div(class="frame-column")
+        +dropdown({
+            name : 'dropdown',
+            buttons : true,
+            header : 'Сколько гостей', 
+            items: [ 
+              {name: 'взрослые'}, 
+              {name: 'дети'}, 
+              {name: 'младенцы'},
+            ]
+        })
+
+    div(class="frame-row third-row")
+      div(class="frame-column")
+        div(class="checkbox-list-wrapper")
+          include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+          
+          +expandable-checkbox-list({
+            header : "expandable-checkbox-list", 
+            items: [
+              {name: 'Завтрак'},
+              {name: 'Письменный стол'},
+              {name: 'Стул для кормления'},
+              {name: 'Кроватка'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+            ]
+          })
+
+          +expandable-checkbox-list({
+            header : "expandable-checkbox-list", 
+            items: [
+              {name: 'Завтрак'},
+              {name: 'Письменный стол'},
+              {name: 'Стул для кормления'},
+              {name: 'Кроватка'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+            ]
+          })
+
+          +expandable-checkbox-list({
+            header : "expandable-checkbox-list", 
+            items: [
+              {name: 'Завтрак'},
+              {name: 'Письменный стол'},
+              {name: 'Стул для кормления'},
+              {name: 'Кроватка'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+              {name: 'Телевизор'},
+              {name: 'Шампунь'},
+            ]
+          })
+          
+      div(class="frame-column")
+        include ../../blocks/rich-checkbox-button/rich-checkbox-button
+        +rich-checkbox-button({
+          header: 'rich checkbox buttons',
+          items: [
+            {name: 'Широкий коридор',
+            text: 'Ширина коридоров в номере не менее 91 см.'},
+            {name: 'Помощник для инвалидов',
+            text: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+          ]
+        })
+
+      div(class="frame-column")
+        include ../../blocks/bullet-list/bullet-list
+        +bullet-list({
+          header: 'bullet list',
+          items: [
+            { text: 'Нельзя с питомцами' },
+            { text: 'Без вечеринок и мероприятий' },
+            { text: 'Время прибытия — после 13:00, а выезд до 12:00'}
+          ]
+        })
+
+
+  div(class="frame-row four-row")
+
+    div(class="icon-text-list-wrapper")
+      include ../../blocks/icon-text-list/icon-text-list
+      +icon-text-list({
+        items: [
+          { icon : 'insert_emoticon',
+            
+            description : 'Шумопоглощающие стены'
+          },
+          {
+            icon : 'location_city',
+            headerText : 'Удобство',
+            description : 'Окно в каждой из спален'
+          }
+        ]
+      })
+
+    div(class="feedback-wrapper")
+      include ../../blocks/feedback/feedback
+      +feedback({
+        userPhoto : '../assets/img/feedback-user-foto.png',
+        userName : 'мурад сарафанов',
+        date : 5,
+        like : 11,
+        comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      })
+
+    div(class="pie-chart-wrapper")
+      include ../../blocks/pie-chart/pie-chart
+      +pie-chart({
+        voteResult: '260 голосов',
+        items: [
+        { mode: great, text: 'Великолепно' },
+        { mode: good, text: 'Хорошо' },
+        { mode: satisfied, text: 'Удовлетворительно' },
+        { mode: bad, text: 'Разочарован' },
+      ]})

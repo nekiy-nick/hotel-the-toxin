@@ -1,0 +1,64 @@
+@import '../../scss/mixin.scss';
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+// каркас страницы
+.content-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.frame-row {
+  display: flex;
+  width: 100%;
+  padding: 50px;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.four-row {
+  padding: 0;
+  padding-bottom: 100px;
+}
+
+.frame-column {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 65vh;
+  max-width: 320px;
+  flex: 1 1 30%;
+  justify-content: space-around;
+}
+
+.checkbox-wrapper h3, .radioBtn-wrapper h3, .toggle-wrapper h3, .likeBtn-wrapper h3, .rateBtn-wrapper h3, .slider-wrapper h3, .buttons-wrapper h3, .pagination-wrapper h3 {
+  margin-bottom: 18px;
+} 
+
+.input-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.date-dropdown-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  flex-basis: 130px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  flex-basis: 300px;
+  justify-content: space-around;
+}
