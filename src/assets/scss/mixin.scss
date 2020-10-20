@@ -10,7 +10,7 @@
   color: $primary-darker;
   font-size: $h3-text-size;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 // текст кнопок
@@ -20,6 +20,11 @@
   font-weight: bold;
   font-size: $h3-text-size;
   text-transform: uppercase;
+}
+
+// тень кнопок при focus
+@mixin button-shadow($color) {
+  box-shadow: 1px 1px 4px 1px $color;
 }
 
 // градиент кнопок
