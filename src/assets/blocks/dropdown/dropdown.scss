@@ -1,0 +1,169 @@
+.dropdown {
+  border: 1px solid $primary-light;
+  display: flex;
+  overflow: hidden;
+  flex-flow: column wrap;
+  justify-content: center;
+  transition: .2s;
+  border-radius: 6px;
+  background-color: #fff;
+  min-height: 44px;
+
+  &:hover {
+    border-color: $primary-main;
+    
+    .dropdown__drop-arrow {
+      color: $primary-dark;
+    }
+    .dropdown__body {
+      border-top-color: $primary-main;
+    }
+  }
+
+  &__wrapper {
+    max-width: 320px;
+
+    &_medium-width {
+      max-width: 266px;
+    }
+
+    &_small-width {
+      max-width: 150px;
+    }
+  }
+
+  &__name {
+    @include h3-header;
+    padding-bottom: 5px;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 44px;
+
+    &_input-date {
+
+      .input-text-field {
+        min-width: 116px;
+
+        &__input {
+          border: none;
+        }
+      }
+
+      &:hover .input-text-field__input {
+        color: $primary-dark;
+      }
+    }
+
+    &_input-date .dropdown__button {
+      padding-right: 20px;
+      padding-left: 0px;
+     
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    color: $primary-main;
+    height: 44px;
+    // width: 44px;
+    font-size: $h1-text-size;
+    transition: text-shadow .2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      text-shadow: 2px 2px 2px transparent, 
+    4px 4px 4px currentColor;
+    }
+  }
+
+  &__header {
+    color: $primary-dark;
+    font-size: $body-text-size;
+    font-family: $main-font;
+    padding-left: 15px;
+    letter-spacing: 1px;
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: inherit;
+    padding: 5px;
+    border-top: 1px solid $primary-light;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    width: 100%;
+    padding-top: 22px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    justify-content: space-between;
+
+    &_visible {
+      display: flex;
+    }
+  }
+}
+// стили для dropdown-item
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  & + & {
+    margin-top: 6px;
+  }
+
+  &__text {
+    font-family: $main-font;
+    font-size: $h3-text-size;
+    color: $primary-darker;
+    font-weight: bold;
+    align-self: center;
+    text-transform: uppercase;
+    padding-left: 10px;
+    letter-spacing: 1px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid $primary-light;
+    color: $primary-main;
+    font-size: $body-text-size;
+    outline: none;
+    transition: border-color .2s ease-in-out;
+
+    &:hover, &:focus {
+      border-color: $primary-main;
+    }
+
+    &:disabled {
+      border: none;
+      color: $primary-light;
+    }
+  }
+
+  &__count {
+    font-family: $main-font;
+    font-size: $h3-text-size;
+    color: $primary-darker;
+    font-weight: bold;
+    width: 30px;
+    display: inline-block;
+    padding: 0 10px;
+  }
+}

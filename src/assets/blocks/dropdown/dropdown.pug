@@ -1,0 +1,79 @@
+mixin dropdown(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+    
+  -
+    let header = "dropdown header"
+    let size = "dropdown size"
+    let buttons = false
+    let name = ""
+    let dataHeaderDescription = "description header"
+    let data = "data dropdown"
+    let mode = "modifier"
+    let firstFilterDateSpan = ""
+    let seconFilterdDateSpan = ""
+
+  if(!options.header)
+    - options.header = 'This is dropdown'
+
+  div(class="dropdown__wrapper" class=options.size)
+
+    if(options.name !== undefined)
+      h3(class="dropdown__name")= options.name
+
+    div(class="dropdown js-dropdown")
+
+      case options.mode
+        when "date-dropdown"
+          div(class="dropdown__head dropdown__head_input-date js-dropdown__head_input-date js-dropdown__head")
+            include ../input-text-field/input-text-field
+            +input-text-field({
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "date",
+              mode: 'masked',
+              size: small
+            })
+            button(class="dropdown__button js-dropdown__button material-icons") expand_more
+          div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
+          //- здесь наверное должен лежать календарь
+        when "filter-date-dropdown"
+          div(class="dropdown__head dropdown__head_filter-date-dropdown js-dropdown__head_filter-date-dropdown js-dropdown__head")
+            p(class="dropdown__header")
+              span(class="dropdown__header_filter-date-dropdown")= options.firstFilterDateSpan
+              span(class="dropdown__header_filter-date-dropdown")  — 
+              span(class="dropdown__header_filter-date-dropdown")= options.seconFilterdDateSpan
+            button(class="dropdown__button js-dropdown__button material-icons") expand_more
+          div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
+          //- здесь наверное должен лежать календарь
+        default
+          div(class="dropdown__head js-dropdown__head" data-description=options.dataHeaderDescription)
+            span(class="dropdown__header js-dropdown__header" title=options.header)= options.header
+            button(class="dropdown__button js-dropdown__button material-icons") expand_more
+
+          div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
+
+            for item in options.items
+              div(class="dropdown__item dropdown-item js-dropdown__item")
+                span(class="dropdown-item__text")= item.name
+                div(class="dropdown-item__calc-wrapper")
+                  button(disabled="disabled" class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__minus-btn") -
+                  span(class="dropdown-item__count js-dropdown-item__count") 0
+                  button(class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__plus-btn") +
+
+            if options.buttons
+              div(class="dropdown__buttons-wrapper js-dropdown__buttons-wrapper")
+                include ../button-link/button-link
+                +button-link({
+                  text : "очистить",
+                  mode : [linkGray, "js-dropdown-cancelBtn"],
+                  disabled : "disabled"
+                })
+                +button-link({
+                  text : "применить",
+                  mode : "js-dropdown-successBtn",
+                })
+          
+- let medium = "dropdown__wrapper_medium-width"
+- let small = "dropdown__wrapper_small-width"
