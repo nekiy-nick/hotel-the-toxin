@@ -1,2 +1,36 @@
 @import 'color-reference/color-reference';
 @import 'type-reference/type-reference';
+// импорт блоков для кнопок
+@import 'button-UI/button-UI';
+@import 'button-link/button-link';
+// импорт radiobtn
+@import 'radio-button/radio-button';
+// импорт блоков инпутов
+@import 'input-text-field/input-text-field';
+
+// импорт стиля h3 заголовка
+@import 'h3-header/h3-header';
+// импорт стилей checkbox-button
+@import 'checkbox-button/checkbox-button';
+// импорт стилей toggle
+@import 'toggle/toggle';
+// импорт стилей like-button
+@import 'like-button/like-button';
+// импорт стилей rate-button
+@import 'rate-button/rate-button';
+// импорт блока дропдаун с чекбоксами
+@import 'expandable-checkbox-list/expandable-checkbox-list';
+// импорт стилей блока удобств номеров отеля с иконками
+@import 'icon-text-list/icon-text-list';
+// импорт стилей блока отзыва
+@import 'feedback/feedback';
+// импорт стилей блока dropdown
+@import 'dropdown/dropdown';
+// импорт блока диаграмма
+@import 'pie-chart/pie-chart';
+
+@import 'range-slider/range-slider';
+@import 'pagination/pagination';
+
+@import 'rich-checkbox-button/rich-checkbox-button';
+@import 'bullet-list/bullet-list';
