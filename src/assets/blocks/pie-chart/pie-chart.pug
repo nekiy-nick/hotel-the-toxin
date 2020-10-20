@@ -1,0 +1,27 @@
+mixin pie-chart(options)
+
+  -
+    let voteResult = ""
+
+  .pie-chart
+    h2(class="pie-chart__header") Впечатления от номера
+    div(class="pie-chart__body")
+      div(class="pie-chart__diagram-wrapper")
+        span(class="diagram__text-result")= options.voteResult
+        svg(class="pie-chart__diagram diagram" width="160" height="160" viewbox="0 0 50 50")
+          circle(class="diagram__unit diagram__unit_great" r="15.9" cx="50%" cy="50%")
+            //-  linearGradient(id="grad1" x1="0%" y1="0%" x2="100%" y2="0%")
+            //-   stop(offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1")
+            //-   stop(offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1")
+
+          circle(class="diagram__unit diagram__unit_good" r="15.9" cx="50%" cy="50%")
+          circle(class="diagram__unit diagram__unit_satisfied diagram__unit_max" r="15.9" cx="50%" cy="50%")
+          circle(class="diagram__unit diagram__unit_bad" r="15.9" cx="50%" cy="50%")
+
+      ul(class="pie-chart__feedback-wrapper")
+        for item in options.items
+          li(class="pie-chart__feedback" class=item.mode)= item.text
+- let great = "pie-chart__feedback_great"
+- let good  = "pie-chart__feedback_good"
+- let satisfied = "pie-chart__feedback_satisfied"
+- let bad = "pie-chart__feedback_bad"
