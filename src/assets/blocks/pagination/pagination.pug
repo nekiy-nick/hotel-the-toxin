@@ -1,0 +1,22 @@
+mixin pagination(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+  if(!options.paginationList)
+    - options.paginationList = {}
+
+  - let paginationList = "pagination list pages"  
+  
+  div(class="pagination-container")=options.paginationList
+    for item in options.paginationList
+      div()=item
+  
+
+  ul(class="pagination")
+    //- li(class="pagination__item")
+    //-   a(href="#" class="pagination__link pagination__link_active") 1
+    //- li(class="pagination__item")
+    //-   a(href="#" class="pagination__link") 2
+    //- li(class="pagination__item")
+    //-   a(href="#" class="pagination__link") 3  
