@@ -1,0 +1,21 @@
+.search-room-form {
+  @include card-block;
+
+  &__header {
+    @include h2-header;
+    margin-bottom: 1.4rem;
+  }
+
+  &__input-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form {
+
+    .button-UI {
+      margin-top: 30px;
+    }
+  }
+}
