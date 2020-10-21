@@ -10,7 +10,11 @@ block head
 block content
   main(class="content-wrapper content-cards-wrapper")
     div(class="frame-column")
+      include ../../blocks/search-room-form/search-room-form
       include ../../blocks/registration-form/registration-form
+      +search-room-form({
+        header: "Найдём номера под ваши пожелания"
+      })
       +registration-form({
         header: "Регистрация аккаунта",
         question: "Уже есть аккаунт на Toxin"
