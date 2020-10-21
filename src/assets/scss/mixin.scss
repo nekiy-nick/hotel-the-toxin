@@ -11,6 +11,7 @@
   font-size: $h3-text-size;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: $h3-line-height;
 }
 
 @mixin h2-header() {
@@ -19,6 +20,7 @@
   font-size: $h1-text-size;
   font-weight: bold;
   letter-spacing: 1px;
+  line-height: $h1-line-height;
 }
 
 // текст кнопок
