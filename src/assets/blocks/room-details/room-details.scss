@@ -1,0 +1,59 @@
+.room-details {
+  display: flex;
+  justify-content: space-between;
+
+  &__room-number {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 8px;
+    font-family: $secondary-font;
+    font-size: $h1-text-size;
+    font-weight: bold;
+
+    &:before {
+      content: '№';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      font-size: $body-text-size;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__room-status {
+    color: $cosmos-color;
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: $h3-text-size;
+  }
+
+  &__room-price {
+    font-family: $main-font;
+    color: $primary-main;
+    font-size: $body-text-size;
+    font-weight: bold;
+    position: relative;
+    padding-right: 10px;
+    margin-right: 4px;
+
+    &:after {
+      content: '₽';
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+    }
+
+    &-container {
+      align-self: flex-end;
+    }
+  }
+
+  &__period {
+    font-family: $main-font;
+    color: $primary-main;
+    font-size: $h3-text-size;
+    // font-weight: 300;
+    letter-spacing: .8px;
+  }
+}
