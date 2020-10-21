@@ -1,0 +1,19 @@
+extends ../../layout/page-layout
+
+block variables
+  - let title = "Cards";
+  - let description = "";
+  - let keywords = "";
+
+block head
+
+block content
+  main(class="content-wrapper")
+    div(class="frame-column")
+    div(class="frame-column")
+      include ../../blocks/sign-in-form/sign-in-form
+      +sign-in-form({
+        header: "Войти",
+        question: "Нет аккаунта на Toxin?"
+      })
+    div(class="frame-column")
