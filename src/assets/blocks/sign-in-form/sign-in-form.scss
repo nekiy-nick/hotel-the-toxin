@@ -1,0 +1,37 @@
+.sign-in-form {
+  @include card-block;
+
+  &__header {
+    @include h2-header;
+    margin-bottom: 1.4rem;
+  }
+
+  &__form {
+
+    .input-text-field + .input-text-field {
+      margin-top: 10px;
+    }
+
+    .button-UI {
+      margin-top: 20px;
+    }
+  }
+
+  &__span {
+    font-size: $body-text-size;
+    color: #000;
+    font-family: $main-font;
+    letter-spacing: .8px;
+  }
+
+  &__footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button-UI {
+      padding: 0 20px;
+    }
+  }
+}
