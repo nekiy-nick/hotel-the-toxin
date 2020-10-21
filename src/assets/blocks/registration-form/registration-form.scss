@@ -1,0 +1,48 @@
+.registration-form {
+  @include card-block;
+
+  &__header {
+    @include h2-header;
+    margin-bottom: 1.4rem;
+  }
+
+  &__form {
+
+    .input-text-field {
+
+      &__header {
+        margin-top: 24px;
+      }
+
+      & + .input-text-field {
+        margin-top: 10px;
+      }
+    }
+
+    .button-UI {
+      margin-top: 24px;
+    }
+
+    .toggle, .radio-button {
+      margin-top: 10px;
+    }
+  }
+
+  &__input-container {
+
+    .input-text-field__header {
+      margin-top: 22px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    .button-UI {
+      padding: 0 28px;
+    }
+  }
+}

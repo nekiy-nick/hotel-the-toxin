@@ -1,0 +1,65 @@
+mixin registration-form(options)
+  if(!options)
+    - options = {}
+  -
+    let header = "header form"
+    let question = "question text"
+
+  div(class="registration-form")
+    include ../../blocks/input-text-field/input-text-field
+    include ../../blocks/radio-button/radio-button
+    include ../../blocks/toggle/toggle
+    include ../../blocks/button-UI/button-UI
+  
+    h2(class="registration-form__header")=options.header
+    form(class="registration-form__form")
+      
+      +input-text-field({
+        placeholder: "Имя"
+      })
+
+      +input-text-field({
+        placeholder: "Фамилия"
+      })
+
+      +radio-button({
+        text: "Мужчина"
+      })
+
+      +radio-button({
+        text: "Женщина"
+      })
+
+      +input-text-field({
+        description: "дата рождения",
+        mode: "masked",
+        placeholder: "ДД.ММ.ГГГГ"
+      })
+
+      div(class="registration-form__input-container")
+
+        +input-text-field({
+          description: "данные для входа в сервис",
+          placeholder: "Email"
+        })
+
+        +input-text-field({
+          placeholder: "Пароль"
+        })
+
+      +toggle({
+        text: "Получать спецпредложения"
+      })
+
+      +button-UI({
+        mode: long,
+        text: "перейти к оплате",
+        type:"submit"
+      })
+
+    div(class="registration-form__footer")
+      span(class="registration-form__span")=options.question
+      +button-UI({
+        mode: transperent,
+        text: "войти"
+      })
