@@ -1,0 +1,50 @@
+.price-calculator-form {
+  @include card-block;
+
+  .room-details {
+    
+    &_visible-info {
+
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  &__list-service {
+    margin: 20px 0;
+  }
+
+  &__item-service-container {
+    display: flex;
+    justify-content: space-between;
+
+    & + & {
+      margin-top: 15px;
+    }
+  }
+
+  &__item-service {
+    color: $primary-dark;
+    font-size: $body-text-size;
+    font-family: $main-font;
+  }
+
+  &__price-service {
+    color: $primary-dark;
+    font-size: $body-text-size;
+    font-family: $main-font;
+    position: relative;
+    padding-right: 10px;
+
+    &:after {
+      content: '₽';
+      position: absolute;
+      right: 0;
+
+    }
+  }
+}
