@@ -8,8 +8,13 @@ block variables
 block head
 
 block content
-  main(class="content-wrapper")
+  main(class="content-wrapper content-cards-wrapper")
     div(class="frame-column")
+      include ../../blocks/registration-form/registration-form
+      +registration-form({
+        header: "Регистрация аккаунта",
+        question: "Уже есть аккаунт на Toxin"
+      })
     div(class="frame-column")
       include ../../blocks/sign-in-form/sign-in-form
       +sign-in-form({
