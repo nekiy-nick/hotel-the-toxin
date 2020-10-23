@@ -3,45 +3,56 @@ mixin price-calculator-form(options)
     - options = {}
   if(!options.items)
     - options.items = []
+  -
+    let nameForm = "Form name"
 
-  div(class="price-calculator-form")
+  div(class="price-calculator-form js-price-calculator-form")
     include ../room-details/room-details
     include ../dropdown/dropdown
     include ../button-UI/button-UI
 
-    +room-details({
-      roomNumber: "888",
-      roomStatus: "люкс",
-      roomPrice: "9 990"
-    })
-
-    div(class="price-calculator-form__input-container")
-      +dropdown({
-        name: "прибытие",
-        size: small,
-        mode: "date-dropdown"
+    form(class="price-calculator-form__form" method="POST" name=options.nameForm)
+      +room-details({
+        roomNumber: "888",
+        roomStatus: "люкс",
+        roomPrice: "9 990"
       })
+
+      div(class="price-calculator-form__input-container")
+        +dropdown({
+          name: "прибытие",
+          size: small,
+          mode: "date-dropdown"
+        })
+        +dropdown({
+          name: "выезд",
+          size: small,
+          mode: "date-dropdown"
+        })
+
       +dropdown({
-        name: "выезд",
-        size: small,
-        mode: "date-dropdown"
+        name: "гости",
+        header: "Сколько гостей",
+        items: [
+          { name: "взрослые", },
+          { name: "дети", },
+          { name: "младенцы", },
+        ]
       })
-    +dropdown({
-      name: "гости",
-      
-    })
 
-    dl(class="price-calculator-form__list-service")
-      for item in options.items
-        div(class="price-calculator-form__item-service-container")
-          dt(class="price-calculator-form__item-service")=item.service
-          dd(class="price-calculator-form__price-service")=item.price
-    
-    div(class="price-calculator-form__result-price-container")
-      span(class="price-calculator-form__result-span") Итого
-      span(class="price-calculator-form__result-price js-price-calculator-form__result-price")=options.resultPrice
+      dl(class="price-calculator-form__list-service")
+        for item in options.items
+          div(class="price-calculator-form__item-service-container")
+            dt(class="price-calculator-form__item-service")=item.service
+            dd(class="price-calculator-form__price-service")=item.price
 
-    +button-UI({
-      text: "забронировать",
-      mode: long
-    })
+      div(class="price-calculator-form__result-price-container")
+        span(class="price-calculator-form__result-span") Итого
+        span(class="price-calculator-form__decoration-span")
+        span(class="price-calculator-form__result-price js-price-calculator-form__result-price")=options.resultPrice
+
+      +button-UI({
+        text: "забронировать",
+        mode: long,
+        type: "submit"
+      })
