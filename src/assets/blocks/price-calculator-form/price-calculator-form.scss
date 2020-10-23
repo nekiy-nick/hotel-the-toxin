@@ -1,13 +1,6 @@
 .price-calculator-form {
   @include card-block;
 
-  .room-details {
-    
-    &_visible-info {
-
-    }
-  }
-
   &__input-container {
     display: flex;
     justify-content: space-between;
@@ -16,6 +9,7 @@
 
   &__list-service {
     margin: 20px 0;
+    margin-bottom: 30px;
   }
 
   &__item-service-container {
@@ -31,6 +25,8 @@
     color: $primary-dark;
     font-size: $body-text-size;
     font-family: $main-font;
+    letter-spacing: 1px;
+    line-height: 18px;
   }
 
   &__price-service {
@@ -44,7 +40,43 @@
       content: '₽';
       position: absolute;
       right: 0;
+    }
+  }
 
+  &__result-price-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__result-span {
+    font-family: $secondary-font;
+    color: $primary-darker;
+    font-size: $h2-text-size;
+    font-weight: bold;
+    padding-right: 4px;
+  }
+
+  &__decoration-span {
+    border-bottom: 1px dotted $primary-light;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  &__result-price {
+    font-family: $secondary-font;
+    color: $primary-darker;
+    font-size: $h2-text-size;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 12px;
+    position: relative;
+
+    &:after {
+      content: '₽';
+      position: absolute;
+      right: 0;
     }
   }
 }
