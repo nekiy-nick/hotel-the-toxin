@@ -1,0 +1,30 @@
+mixin sign-in-form(options)
+  if(!options)
+    - options = {}
+
+  -
+    let header = "form header"
+    let question = "footer text"
+
+  div(class="sign-in-form")
+    include ../button-UI/button-UI
+    include ../input-text-field/input-text-field
+    h2(class="sign-in-form__header")=options.header
+    form(class="sign-in-form__form")
+      
+      +input-text-field({
+        placeholder: "Email",
+        name: ""})
+      +input-text-field({
+        placeholder: "Пароль",
+        name: ""})
+      
+      +button-UI({
+        mode: long,
+        text: "войти",
+        type:"submit"})
+    div(class="sign-in-form__footer")
+      span(class="sign-in-form__span")=options.question
+      +button-UI({
+        mode : transperent,
+        text: "создать"})

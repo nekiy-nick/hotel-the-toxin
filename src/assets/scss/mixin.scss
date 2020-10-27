@@ -11,6 +11,30 @@
   font-size: $h3-text-size;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: $h3-line-height;
+}
+
+@mixin h2-header() {
+  font-family: $secondary-font;
+  color: $primary-darker;
+  font-size: $h1-text-size;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: $h1-line-height;
+}
+
+@mixin bold-number-text() {
+  font-family: $main-font;
+  color: $primary-main;
+  font-size: $body-text-size;
+  font-weight: bold;
+}
+
+@mixin light-text() {
+  font-family: $main-font;
+  color: $primary-main;
+  font-size: $h3-text-size;
+  letter-spacing: .8px;
 }
 
 // текст кнопок
@@ -46,4 +70,19 @@
   background: linear-gradient($degree, $first-color $first-color-transparent, $second-color $second-color-transparent);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+// Cards
+@mixin card-block() {
+  max-width: 380px;
+  background-color: #fff;
+  padding: 40px 30px 30px;
+  box-shadow: 
+  2px 0px 20px -5px $primary-light,
+  // тень снизу
+  0px 2px 20px -5px $primary-light,
+  //  тень слева
+  -2px 0px 20px -5px $primary-light,
+  // тень сверху
+  0px -2px 20px -5px $primary-light;
 }

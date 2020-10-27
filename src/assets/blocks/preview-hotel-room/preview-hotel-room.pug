@@ -1,0 +1,31 @@
+mixin preview-hotel-room(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+  if(!options.countRating)
+    - options.countRating = "0"
+  -
+    let roomNumber = "room number"
+    let roomStatus = "room status"
+    let roomPrice = "room price"
+    let countRating = "room count rating"
+
+  div(class="preview-hotel-room")
+    include ../room-details/room-details
+    include ../rate-button/rate-button
+
+    div(class="preview-hotel-room__carousel")
+      for item in options.items
+        img(class="preview-hotel-room__image" src=item.pathSrc alt=item.altAttr)
+    div(class="preview-hotel-room__details-container")
+      +room-details({
+        roomNumber: options.roomNumber,
+        roomStatus: options.roomStatus,
+        roomPrice: options.roomPrice
+      })
+      div(class="preview-hotel-room__rating-container")
+        +rate-button()
+        p(class="preview-hotel-room__rating-text-container")
+          span(class="preview-hotel-room__count-rating js-preview-hotel-room__count-rating")=options.countRating
+          span(class="preview-hotel-room__span-rating js-preview-hotel-room__span-rating") Отзывов

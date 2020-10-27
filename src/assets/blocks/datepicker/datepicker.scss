@@ -1,0 +1,118 @@
+.my-datepicker {
+  max-width: 320px;
+  box-shadow: 2px 2px 12px $primary-light;
+}
+
+.datepicker {
+  border: 1px solid $primary-light;
+  width: 320px;
+  position: relative;
+  left: 0;
+  opacity: 1;
+
+  &--nav {
+    border: none;
+    padding: 16px;
+
+    &-action{
+      position: relative;
+    }
+    // кастомные стрелки Material icons
+    &-action[data-action="prev"]:before {
+      font-family: 'Material Icons';
+      content: '\e5c4';
+      font-size: $h1-text-size;
+      color: $cosmos-color;
+    }
+
+    &-action[data-action="next"]:before {
+      font-family: 'Material Icons';
+      content: '\e5c8';
+      font-size: $h1-text-size;
+      color: $cosmos-color;
+    }
+
+    svg {
+      // спрятал стрелки переключения месяца
+      display: none;
+    }
+
+    &-title {
+      font-family: $secondary-font;
+      font-weight: bold;
+      font-size: $h2-text-size;
+      color: $primary-darker;
+
+      & i {
+        font-family: $secondary-font;
+        font-weight: bold;
+        font-size: $h2-text-size;
+        color: $primary-darker;
+      }
+    }
+  }
+
+  &--content {
+    padding: 16px 20px;
+  }
+  // дни недели
+  &--days-names {
+
+  }
+
+  // числа
+  &--cells {
+    padding-top: 10px;
+  }
+
+  &--day-name {
+    font-family: $main-font;
+    text-transform: none;
+    font-size: $h3-text-size;
+    font-weight: bold;
+    color: $cosmos-color;
+  }
+
+  &--cell {
+    border-radius: 50%;
+    height: 40px;
+
+    &.-selected-.-current- {
+      background: linear-gradient($cosmos-color, $cosmos-gradient-color);
+    }
+
+    &.-selected-, &.-current- {
+      color: white;
+      font-weight: bold;
+    }
+
+    &.-current- {
+
+      &:hover {
+        color: white;
+        background: linear-gradient($success-color, $success-gradient-color);
+      }
+      
+      background: linear-gradient($success-color, $success-gradient-color);
+    }
+
+    &.-selected- {
+
+      &:hover {
+        background: linear-gradient($cosmos-color, $cosmos-gradient-color);
+      }
+
+      background: linear-gradient($cosmos-color, $cosmos-gradient-color);
+    }
+  }
+
+  &--cell-day {
+    font-family: $main-font;
+    font-size: $h3-text-size;
+    color: $primary-main;
+  }
+
+  .-other-month- {
+    color: $primary-light;
+  }
+}

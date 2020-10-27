@@ -1,0 +1,30 @@
+mixin search-room-form(options)
+  if(!options)
+    - options = {}
+  -
+    let header = "header form"
+
+  div(class="search-room-form")
+    include ../dropdown/dropdown
+    include ../button-UI/button-UI
+    h2(class="search-room-form__header")=options.header
+    form(class="search-room-form__form")
+      div(class="search-room-form__input-container")
+        +dropdown({
+          name: "Прибытие",
+          size: small,
+          mode: "date-dropdown"
+        })
+        +dropdown({
+          name: "Выезд",
+          size: small,
+          mode: "date-dropdown"
+        })
+      +dropdown({
+        name: "Гости",
+        header: "Сколько гостей",
+      })
+      +button-UI({
+        text: "подобрать номер",
+        mode: long
+      })  

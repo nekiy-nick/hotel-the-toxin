@@ -1,0 +1,112 @@
+.preview-hotel-room {
+  max-width: 270px;
+  box-shadow: 0px 6px 20px -5px $primary-light;
+
+  .slick-dotted.slick-slider {
+    margin-bottom: 0px;
+  }
+
+  &__carousel {
+    height: 150px;
+    background-color: $primary-dark;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    overflow: hidden;
+
+    .slick-dots {
+      bottom: 12px;
+      padding-left: 74%;
+
+      li {
+        margin: 0 2px;
+      }
+
+      li, button {
+        width: 8px;
+        height: 8px;
+      }
+
+      li button {
+        padding: 2px; 
+        border: 1px solid #fff;
+        border-radius: 50%;
+
+        &:before {
+          content: '';
+          width: 0;
+          height: 0;
+        }
+      }
+
+      .slick-active button {
+        background-color: #fff;
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+      z-index: 90;
+      transition: text-shadow .2s ease-in-out;
+
+      &:before {
+        font-family: 'Material Icons';
+        content: '\e5cb';
+        font-size: $h1-text-size;
+      }
+
+      &:hover, &:focus {
+        text-shadow: 2px 2px 2px transparent,
+        4px 0px 4px $primary-darker;
+      }
+    }
+
+    .slick-next {
+      right: 10px;
+      transition: text-shadow .2s ease-in-out;
+
+      &:before {
+        font-family: 'Material Icons';
+        content: '\e5cc';
+        font-size: $h1-text-size;
+      }
+
+      &:hover, &:focus {
+        text-shadow: 2px 2px 2px transparent,
+        4px 0px 4px $primary-darker;
+      }
+    }
+  }
+
+  &__image {
+    background-color: #999;
+  }
+
+  &__details-container {
+    padding: 30px 20px 20px;
+
+    .room-details__room-number {
+      font-size: $h2-text-size;
+
+      &:before {
+        bottom: 12px;
+      }
+    }
+  }
+
+  &__rating-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__count-rating {
+    @include bold-number-text;
+    margin-right: 4px;
+  }
+
+  &__span-rating {
+    @include light-text;
+  }
+}
