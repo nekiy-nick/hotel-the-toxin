@@ -23,6 +23,20 @@
   line-height: $h1-line-height;
 }
 
+@mixin bold-number-text() {
+  font-family: $main-font;
+  color: $primary-main;
+  font-size: $body-text-size;
+  font-weight: bold;
+}
+
+@mixin light-text() {
+  font-family: $main-font;
+  color: $primary-main;
+  font-size: $h3-text-size;
+  letter-spacing: .8px;
+}
+
 // текст кнопок
 @mixin button-text($color) {
   color: $color;
