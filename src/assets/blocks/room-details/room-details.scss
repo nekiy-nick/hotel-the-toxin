@@ -9,12 +9,14 @@
     font-family: $secondary-font;
     font-size: $h1-text-size;
     font-weight: bold;
+    line-height: 0;
+    align-self: center;
 
     &:before {
       content: '№';
       position: absolute;
       left: 0;
-      bottom: -4px;
+      bottom: 14px;
       font-size: $body-text-size;
       transform: translateY(-50%);
     }
@@ -29,10 +31,7 @@
   }
 
   &__room-price {
-    font-family: $main-font;
-    color: $primary-main;
-    font-size: $body-text-size;
-    font-weight: bold;
+    @include bold-number-text;
     position: relative;
     padding-right: 10px;
     margin-right: 4px;
@@ -41,7 +40,6 @@
       content: '₽';
       position: absolute;
       right: 0;
-      bottom: -1px;
     }
 
     &-container {
@@ -50,10 +48,6 @@
   }
 
   &__period {
-    font-family: $main-font;
-    color: $primary-main;
-    font-size: $h3-text-size;
-    // font-weight: 300;
-    letter-spacing: .8px;
+    @include light-text;
   }
 }
