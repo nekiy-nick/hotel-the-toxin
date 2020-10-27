@@ -5,6 +5,11 @@ mixin preview-hotel-room(options)
     - options.items = []
   if(!options.countRating)
     - options.countRating = "0"
+  -
+    let roomNumber = "room number"
+    let roomStatus = "room status"
+    let roomPrice = "room price"
+    let countRating = "room count rating"
 
   div(class="preview-hotel-room")
     include ../room-details/room-details
@@ -14,7 +19,11 @@ mixin preview-hotel-room(options)
       for item in options.items
         img(class="preview-hotel-room__image" src=item.pathSrc alt=item.altAttr)
     div(class="preview-hotel-room__details-container")
-      +room-details()
+      +room-details({
+        roomNumber: options.roomNumber,
+        roomStatus: options.roomStatus,
+        roomPrice: options.roomPrice
+      })
       div(class="preview-hotel-room__rating-container")
         +rate-button()
         p(class="preview-hotel-room__rating-text-container")
