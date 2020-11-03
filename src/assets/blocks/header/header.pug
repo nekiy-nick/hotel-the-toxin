@@ -1,0 +1,71 @@
+mixin header(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+  -
+    let srcImg = "logotype source"
+    let userName = "user name"
+    let button1Text = "first button text"
+    let button2Text = "second button text"
+    let linkMode = "modifier"
+
+  header(class="header")
+    div(class="frame-container")
+      a(class="header__main-link" href="#")
+        img(class="header__logotype" src=options.srcImg alt="logotype")
+
+      div(class="header__content-container")
+
+        nav(class="header__menu")
+          ul(class="header__nav-list nav-list")
+            for item in options.items
+
+              if (item.ul)
+                li(class="nav-list__item nav-list__item_list js-nav-list__item_list")
+                  span(class="nav-list__link nav-list__inner-link js-nav-list__inner-link" href=item.linkHref)= item.linkText
+                  button(class="nav-list__arrow-btn js-nav-list__arrow-btn material-icons") expand_more
+
+                  ul(class="nav-list__item nav-list__inner-list nav-list__inner-list_hidden js-nav-list__inner-list")
+                    for list in item.items
+                      li(class="nav-list__inner-item")
+                        a(class="nav-list__inner-link" href=list.linkHref)= list.linkText
+              else
+                li(class="nav-list__item")
+                  a(class="nav-list__link" class=item.linkMode href=item.linkHref)= item.linkText
+
+        case options.mode
+          when "user-logged-in"
+            a(class="header__user-name" href="")= options.userName
+          default
+            div(class="header__buttons-wrapper")
+              include ../button-UI/button-UI
+              +button-UI({
+                mode: transparent,
+                text: options.button1Text
+              })
+              +button-UI({
+                text: options.button2Text
+              })
+      //- мобильная версия меню
+      div(class="header__mobile-menu-container mobile-menu js-header__mobile-menu-container")
+        div(class="mobile-menu__toggle-button js-mobile-menu__toggle-button")
+
+    nav(class="header__mobile-nav js-header__mobile-nav")
+      ul(class="header__mobile-nav-list mobile-list")
+        for item in options.items
+
+          if (item.ul)
+            li(class="mobile-list__item mobile-list__item_hidden mobile-list__item_list js-mobile-list__item_list")
+              span(class="mobile-list__link js-mobile-list__inner-link" href=item.linkHref)= item.linkText
+              button(class="mobile-list__arrow-btn js-mobile-list__arrow-btn material-icons") expand_more
+
+              ul(class="mobile-list__item mobile-list__inner-list mobile-list__inner-list_hidden js-mobile-list__inner-list")
+                for list in item.items
+                  li(class="mobile-list__inner-item")
+                    a(class="mobile-list__inner-link" href=list.linkHref)= list.linkText
+          else
+            li(class="mobile-list__item")
+              a(class="mobile-list__link" class=item.linkMode href=item.linkHref)= item.linkText
+
+- let currentLink = "nav-list__item_current"
