@@ -1,0 +1,118 @@
+extends ../../layout/page-layout
+
+block variables
+  - let title = "Headers & Footers";
+  - let description = "";
+  - let keywords = "";
+
+block head
+
+block content
+  main(class="content-wrapper content-headers-and-footers")
+    include ../../blocks/header/header
+    include ../../blocks/footer/footer
+    +header({
+      srcImg: "/assets/img/logo/logo.svg",
+      items: [
+        {linkText: "Home", linkHref: ""},
+        
+        {linkText: "About Us", linkHref: "",
+          ul: true,
+          items: [
+            { linkText: "About Us -1", linkHref: "https://google.com" },
+            { linkText: "About Us -2" },
+            { linkText: "About Us petrovich-3" },
+            { linkText: "About Us -4" },
+            { linkText: "About Us petrovich bitch pechnic-5" },
+            { linkText: "About Us -6" },
+        ]
+        },
+        {linkText: "Services", linkHref: ""},
+        {linkText: "Careers", linkHref: ""},
+        {linkText: "News", linkHref: "",
+          ul: true, 
+          items: [
+            { linkText: "News-1", linkHref: "https://google.com" },
+            { linkText: "News-2" },
+            { linkText: "News-3" },
+            { linkText: "News-4" },
+            { linkText: "News-5" },
+            { linkText: "News-6" },
+        ]},
+        {linkText: "Documentation", linkHref: "", linkMode: currentLink},
+
+      ],
+      button1Text: "login",
+      button2Text: "register"
+    })
+
+
+    +header({
+      srcImg: "/assets/img/logo/logo.svg",
+      items: [
+        {linkText: "Home", linkHref: ""},
+        {linkText: "About Us", linkHref: "",
+          ul: true, 
+          items: [
+            { linkText: "About Us -1", linkHref: "https://google.com" },
+            { linkText: "About Us -2" },
+            { linkText: "About Us petrovich-3" },
+            { linkText: "About Us -4" },
+            { linkText: "About Us petrovich bitch pechnic-5" },
+            { linkText: "About Us -6" },
+        ]
+        },
+
+        {linkText: "Careers", linkHref: ""},
+        {linkText: "News", linkHref: "",
+          ul: true, 
+          items: [
+            { linkText: "News-1", linkHref: "https://google.com" },
+            { linkText: "News-2" },
+            { linkText: "News-3" },
+            { linkText: "News-4" },
+            { linkText: "News-5" },
+            { linkText: "News-6" },
+        ]},
+        {linkText: "Documentation", linkHref: "", linkMode: currentLink},
+        {linkText: "Home", linkHref: ""},
+        {linkText: "About Us", linkHref: ""},
+        {linkText: "Services", linkHref: ""},
+      ],
+      button1Text: "login",
+      button2Text: "register"
+    })
+
+    +header({
+      srcImg: "/assets/img/logo/logo.svg",
+      items: [
+        {linkText: "Home", linkHref: "", linkMode: currentLink},
+        {linkText: "About Us", linkHref: ""},
+        {linkText: "Services", linkHref: "", 
+          ul: true, 
+          items: [
+            { linkText: "Services-1" },
+            { linkText: "Services-2" },
+            { linkText: "Services-3" },
+            { linkText: "Services-4" },
+            { linkText: "Services-5" },
+            { linkText: "Services-6" },
+          ]
+        },
+        {linkText: "Careers", linkHref: ""},
+        {linkText: "News", linkHref: ""},
+        {linkText: "Documentation", linkHref: ""},
+      ],
+      mode: "user-logged-in",
+      userName: "Cosmin Negoita"
+    })
+
+    +footer({
+      logoSrc: "/assets/img/logo/logo.svg",
+      mainText: " Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+      socialSites : [
+        { linkHref: "http://twitter.com", socialSite: "twitter"},
+        { linkHref: "http://facebook.com", socialSite: "facebook-square"},
+        { linkHref: "http://instagram.com", socialSite: "instagram"},
+      ]
+    })
