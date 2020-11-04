@@ -1,0 +1,26 @@
+.menu-list {
+
+  &__header {
+    @include h3-header;
+    margin-bottom: 22px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    @include light-text;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 20px;
+  }
+}

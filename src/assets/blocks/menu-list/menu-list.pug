@@ -1,0 +1,18 @@
+mixin menu-list(options)
+
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+  if(!options.header)
+    - options.header = "menu list header"
+
+  -
+    let header = "list header"
+
+  section(class="menu-list")
+    h2(class="menu-list__header")= options.header
+    ul(class="menu-list__list")
+      for item in options.items
+        li(class="menu-list__item")
+          a(class="menu-list__link" href=item.linkHref)= item.linkText
