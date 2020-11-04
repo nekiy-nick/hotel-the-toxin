@@ -10,7 +10,6 @@ import '../node_modules/slick-carousel/slick/slick.min'
 import '../node_modules/slick-carousel/slick/slick.scss'
 import '../node_modules/slick-carousel/slick/slick-theme.scss'
 
-import '@fortawesome/fontawesome-free/js/all.js'
 import './assets/scss/main.scss'
 
 import './assets/pages/colors-and-types/colors-and-types'
@@ -33,3 +32,5 @@ import './assets/blocks/pagination/pagination'
 import './assets/blocks/price-calculator-form/price-calculator-form'
 import './assets/blocks/datepicker/datepicker'
 import './assets/blocks/preview-hotel-room/preview-hotel-room'
+
+import './assets/blocks/header/header'
