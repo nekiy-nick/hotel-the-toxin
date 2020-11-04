@@ -1,0 +1,132 @@
+.footer {
+  width: 100%;
+  background-color: #FFF;
+  @include  kolonticul-shadow;
+
+  &__frame-container {
+    @include frame-container();
+  }
+
+  &__main-info {
+    align-self: start;
+    flex: 0 1 260px;
+  }
+
+  &__main-text {
+    margin-top: 1rem;
+    line-height: $body-line-height;
+
+    font-size: $body-text-size;
+    color: $primary-dark;
+    font-family: $main-font;
+  }
+
+  &__main-info-container {
+    padding: 1rem 0 6.8rem;
+  }
+
+  &__menu-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 4px;
+    justify-content: space-between;
+    flex: 0 1 80%;
+  }
+
+  &__menu-list-container {
+    flex: 0 1 70%;
+    justify-content: space-around;
+    padding-right: 22px;
+    display: flex;
+    // background-color: pink;
+
+    .menu-list {
+      // flex: 0 1 200px;
+    }
+  }
+
+  &__secondary-info-container {
+    border-top: 1px solid $primary-light;
+    padding: 14px 0;
+  }
+
+  &__subscribe-container {
+    max-width: 260px;
+    // background-color: wheat;
+
+    .input-text-field {
+      min-width: 260px;
+    }
+  }
+
+  &__subscribe-header {
+    @include h3-header;
+  }
+
+  &__subscribe-text {
+    font-size: $body-text-size;
+    color: $primary-dark;
+    font-family: $main-font;
+    line-height: $body-line-height;
+    margin: 20px 0;
+  }
+
+  &__copyright-span {
+    font-size: $body-text-size;
+    color: $primary-dark;
+    font-family: $main-font;
+  }  
+}
+
+.social-sites {
+  list-style: none;
+  display: flex;
+
+  &__item + &__item {
+    margin-left: 20px;
+  }
+
+  &__img {
+    font-size: $h1-text-size;
+    @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);    
+  }
+}
+
+@media (max-width: 1220px) {
+  .footer {
+
+    &__menu-list-container {
+      // display: none;
+    }
+  }
+}
+
+@media (max-width: 764px) {
+
+  .footer {
+    padding: 100px 0;
+
+    &__main-info-container {
+      padding-bottom: 0;
+    }
+
+    &__main-info {
+      flex: 0 1 auto;
+      text-align: center;
+    }
+
+    &__secondary-info-container {
+      border: none;
+      margin-top: 12px;
+    }
+
+    &__frame-container {
+      justify-content: center;
+      padding: 0px 60px;
+    }
+
+    &__copyright-span, &__menu-container {
+      display: none;
+    }
+  }
+}

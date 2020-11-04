@@ -1,0 +1,70 @@
+mixin footer(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+
+  if(!options.socialSites)
+    - options.socialSites = []
+
+  -
+    let logoSrc = "logotype source"
+    let mainText = "main footer text"
+
+  footer(class="footer")
+    include ../input-text-field/input-text-field
+    include ../menu-list/menu-list
+
+    div(class="footer__main-info-container")
+      div(class="footer__frame-container")
+        div(class="footer__main-info")
+          a(class="footer__main-link" href="#")
+            img(class="footer__logotype" src=options.logoSrc)
+          p(class="footer__main-text")= options.mainText
+
+        div(class="footer__menu-container")
+          div(class="footer__menu-list-container")
+
+            +menu-list({
+              header: "navigation",
+              items: [
+                { linkText: "About us", linkHref: "https://google.com"},
+                { linkText: "News"},
+                { linkText: "Support"},
+                { linkText: "Products"},
+              ]
+            })
+            +menu-list({
+              header: "about us",
+              items: [                
+                { linkText: "Who we are"},
+                { linkText: "Our team"},
+                { linkText: "Careers"},
+                { linkText: "Investors"},
+              ]
+            })
+            +menu-list({
+              header: "support",
+              items: [
+                { linkText: "Documentation"},
+                { linkText: "Community"},
+                { linkText: "Get in Touch"},
+              ]
+            })
+
+          section(class="footer__subscribe-container")
+            h2(class="footer__subscribe-header") subscribe to our newsletter
+            p(class="footer__subscribe-text") Receive our latest news and promotions in your inbox!
+            +input-text-field({
+              placeholder: "Your email address",
+              mode: "subscribe"
+            })
+
+    div(class="footer__secondary-info-container")
+      div(class="footer__frame-container")
+        span(class="footer__copyright-span") Copyright &#169; 2018 Toxin UI Kit. All rights reserved.
+        ul(class="footer__social-sites social-sites")
+          for link in options.socialSites
+            li(class="social-sites__item")
+              a(class="social-sites__link" href=link.linkHref)
+                span(class=`fab fa-${link.socialSite} social-sites__img`)
