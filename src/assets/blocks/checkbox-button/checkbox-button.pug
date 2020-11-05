@@ -6,8 +6,33 @@ mixin checkbox-button(options)
     - options.text = "this is checkbox"
   -
     let text = "checkbox-text"
+    let mode = false
+    let header = "checkbox-header"
+    let form = "form of input"
+    let value = "value of input"
+    let name = "attribute name of input"
 
   label(class="checkbox-button")
-    input(class="checkbox-button__input" tabindex=0 type="checkbox")
+    input(class="checkbox-button__input" type="checkbox" form=options.form value=options.value name=options.name)
     div(class="checkbox-button__checkbox")
-    span(class="checkbox-button__text")= options.text
+      <svg class="checkbox-button__tick" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.46439 4.40768L5.70703 8.65032L4.29282 10.0645L0.0501771 5.82189L1.46439 4.40768Z" fill="url(#paint0_linear)"/>
+        <path d="M8.53546 2.99347L9.94967 4.40768L4.29282 10.0645L2.8786 8.65032L8.53546 2.99347Z" fill="url(#paint1_linear)"/>
+        <defs>
+          <linearGradient id="paint0_linear" x1="7.82835" y1="2.28636" x2="2.1715" y2="7.94321" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#BC9CFF"/>
+          <stop offset="1" stop-color="#8BA4F9"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="7.82835" y1="2.28636" x2="2.1715" y2="7.94321" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#BC9CFF"/>
+          <stop offset="1" stop-color="#8BA4F9"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+    if(options.mode)
+      div(class="checkbox-button__text-wrapper")
+        h4(class="checkbox-button__header")= options.header
+        span(class="checkbox-button__text checkbox-button__text_smaller")= options.text
+    else
+      span(class="checkbox-button__text")= options.text
