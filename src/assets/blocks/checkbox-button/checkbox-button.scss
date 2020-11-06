@@ -48,12 +48,12 @@
 
   &__header {
     @include h4-header;
+    padding-top: 2px;
+    margin-bottom: 4px;
   }
 
   &__text {
-    font-family: $main-font;
-    font-size: $body-text-size;
-    color: $primary-main;
+    @include light-text;
     letter-spacing: 1px;
 
     &_smaller {
