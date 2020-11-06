@@ -32,7 +32,9 @@ mixin checkbox-button(options)
 
     if(options.mode)
       div(class="checkbox-button__text-wrapper")
+        if(!options.header)
+          - options.header = "Header checkbox"
         h4(class="checkbox-button__header")= options.header
-        span(class="checkbox-button__text checkbox-button__text_smaller")= options.text
+        p(class="checkbox-button__text checkbox-button__text_smaller")= options.text
     else
       span(class="checkbox-button__text")= options.text
