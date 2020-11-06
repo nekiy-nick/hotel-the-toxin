@@ -23,6 +23,14 @@
   line-height: $h1-line-height;
 }
 
+@mixin h4-header() {
+  font-family: $main-font;
+  color: $primary-dark;
+  font-size: $body-text-size;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 @mixin bold-number-text() {
   font-family: $main-font;
   color: $primary-main;
