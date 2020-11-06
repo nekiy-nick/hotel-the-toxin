@@ -8,5 +8,6 @@ mixin icon-text-list(options)
     .icon-text-list
       span(class="material-icons icon-text-list__icon")= item.icon
       .icon-text-list__text-wrapper
-        h4(class="icon-text-list__header")= item.headerText
+        if(item.header)
+          h4(class="icon-text-list__header")= item.header
         span(class="icon-text-list__description")= item.description
