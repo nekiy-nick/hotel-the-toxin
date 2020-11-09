@@ -1,6 +1,11 @@
 mixin radio-button(options)
+  if(!options)
+    - options = {}
+  if(!options.text)
+    - options.text = "It's a radio-button"
   -
     let text = "radio-button text"
+    let form = "parrent form"
     let nameRadioBtn = "name-radio-button"
     let valueRadioBtn = "value-radio-button"
 
@@ -8,6 +13,7 @@ mixin radio-button(options)
     input(
       type="radio" 
       class="radio-button__input"
+      form=options.form
       name=options.nameRadioBtn
       value=options.valueRadioBtn
     )
