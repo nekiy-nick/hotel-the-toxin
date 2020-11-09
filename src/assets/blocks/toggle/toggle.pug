@@ -1,8 +1,21 @@
 mixin toggle(options)
+  if(!options)
+    - options = {}
+  if(!options.text)
+    - options.text = "Just toggle it"
   -
     let text = "toggle-text"
+    let form = "toggle form"
+    let name = "toggle name"
+    let value = "toggle value"
 
   label(class="toggle")
-    input(class="toggle__input" type="checkbox")
+    input(
+      class="toggle__input"
+      type="checkbox"
+      form=options.form
+      name=options.name
+      value=options.value
+      )
     span(class="toggle__checkbox")
     span(class="toggle__text")= options.text    
