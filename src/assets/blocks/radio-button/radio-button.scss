@@ -11,7 +11,7 @@
   }
 
   &__input:checked ~ &__text{
-    color: $primary-darker;
+    color: $primary-dark;
   }
 
   &__input {
@@ -47,7 +47,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      // background: linear-gradient(rgba(188, 156, 255, 100%), rgba(139, 164, 249, 100%));
       @include element-gradient($cosmos-color, $cosmos-gradient-color);
       opacity: 0;
       transition: opacity .2s ease-in-out;
@@ -58,10 +57,5 @@
     @include light-text;
     letter-spacing: 1px;
     transition: color .2s ease-in-out;
-  }
-
-  // т.к. один радио-баттон не логично - здесь отступ для такого же соседа
-  & + & {
-    margin-left: 20px;
   }
 }
