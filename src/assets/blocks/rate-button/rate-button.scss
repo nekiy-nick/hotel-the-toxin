@@ -1,5 +1,3 @@
-@import '../../scss/mixin.scss';
-
 .rating {
   display: flex;
   max-width: max-content;
@@ -8,5 +6,9 @@
   &__star {
     cursor: pointer;
     @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
+
+    &:focus {
+      @include text-shadow($primary-light);
+    }
   }
 }
