@@ -86,8 +86,8 @@ block content
 
           +h3-header({text: "checkbox buttons"})
           
-          +checkbox-button({text : "Можно курить"})
-          //- +checkbox-button
+          +checkbox-button({text : "Можно курить", form: "first form"})
+          +checkbox-button({mode: true, header: "Широкий коридор",})
           +checkbox-button({text : "Можно с питомцами"})
           +checkbox-button({text : "Можно пригласить гостей (до 10 человек)"})      
         
@@ -100,7 +100,7 @@ block content
         div(class="toggle-wrapper")
           include ../../blocks/toggle/toggle
           +h3-header({text : "toggle"})
-          +toggle({text : "Получать спецпредложения"})
+          +toggle({text : "Получать спецпредложения", name:"vasya"})
 
         div(class="likeBtn-wrapper")
           include ../../blocks/like-button/like-button
@@ -235,12 +235,22 @@ block content
       div(class="frame-column")
         include ../../blocks/rich-checkbox-button/rich-checkbox-button
         +rich-checkbox-button({
-          header: 'rich checkbox buttons',
+          header: "rich checkbox buttons",
           items: [
-            {name: 'Широкий коридор',
-            text: 'Ширина коридоров в номере не менее 91 см.'},
-            {name: 'Помощник для инвалидов',
-            text: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+            {
+              header: "Широкий коридор",
+              text: 'Ширина коридоров в номере не менее 91 см.',
+              form: "form",
+              name: "name-1",
+              value: "value-1",
+            },
+            {
+              header: 'Помощник для инвалидов',
+              text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+              form: "form",
+              name: "name-2",
+              value: "value-2",
+            },
           ]
         })
 
@@ -263,12 +273,12 @@ block content
       +icon-text-list({
         items: [
           { icon : 'insert_emoticon',
-            
+            header : 'Комфорт',
             description : 'Шумопоглощающие стены'
           },
           {
             icon : 'location_city',
-            headerText : 'Удобство',
+            header : 'Удобство',
             description : 'Окно в каждой из спален'
           }
         ]
@@ -277,7 +287,7 @@ block content
     div(class="feedback-wrapper")
       include ../../blocks/feedback/feedback
       +feedback({
-        userPhoto : '../assets/img/feedback-user-foto.png',
+        userPhoto : 'assets/img/feedback-user-photo.png',
         userName : 'мурад сарафанов',
         date : 5,
         like : 11,
