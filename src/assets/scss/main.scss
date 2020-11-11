@@ -14,12 +14,12 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '../blocks/blocks';
 
 // импорт блоков-обёрток для страниц
-// @import '../pages/colors-and-types/colors-and-types.scss';
-@import '../pages/form-elements/form-elements.scss';
-@import '../pages/cards/cards.scss';
-@import '../pages/headers-and-footers/headers-and-footers.scss';
+@import '../pages/UI-pages/colors-and-types/colors-and-types.scss';
+@import '../pages/UI-pages/form-elements/form-elements.scss';
+@import '../pages/UI-pages/cards/cards.scss';
+@import '../pages/UI-pages/headers-and-footers/headers-and-footers.scss';
 // импорт стилей для шаблона
-@import '../layout/page-layout.scss';
+@import '../layouts/UI-layout/page-layout.scss';
 
 html {
   background-color: #fff;
