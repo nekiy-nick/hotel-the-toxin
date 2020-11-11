@@ -1,4 +1,4 @@
-extends ../../layout/page-layout
+extends ../../../layouts/UI-layout/page-layout
 
 block variables
   - let title = "Headers & Footers";
@@ -9,10 +9,10 @@ block head
 
 block content
   main(class="content-wrapper content-headers-and-footers")
-    include ../../blocks/header/header
-    include ../../blocks/footer/footer
+    include ../../../blocks/header/header
+    include ../../../blocks/footer/footer
     +header({
-      srcImg: "/assets/img/logo/logo.svg",
+      srcImg: "/assets/img/logo.svg",
       items: [
         {linkText: "Home", linkHref: ""},
         
@@ -48,7 +48,7 @@ block content
 
 
     +header({
-      srcImg: "/assets/img/logo/logo.svg",
+      srcImg: "/assets/img/logo.svg",
       items: [
         {linkText: "Home", linkHref: ""},
         {linkText: "About Us", linkHref: "",
@@ -84,7 +84,7 @@ block content
     })
 
     +header({
-      srcImg: "/assets/img/logo/logo.svg",
+      srcImg: "/assets/img/logo.svg",
       items: [
         {linkText: "Home", linkHref: "", linkMode: currentLink},
         {linkText: "About Us", linkHref: ""},
@@ -108,7 +108,7 @@ block content
     })
 
     +footer({
-      logoSrc: "/assets/img/logo/logo.svg",
+      logoSrc: "/assets/img/logo.svg",
       mainText: " Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
       socialSites : [
         { linkHref: "http://twitter.com", socialSite: "twitter"},

@@ -1,4 +1,4 @@
-extends ../../layout/page-layout
+extends ../../../layouts/UI-layout/page-layout
 
 block variables
   - let title = "Cards";
@@ -10,8 +10,8 @@ block head
 block content
   main(class="content-wrapper content-cards-wrapper")
     div(class="frame-column")
-      include ../../blocks/search-room-form/search-room-form
-      include ../../blocks/registration-form/registration-form
+      include ../../../blocks/search-room-form/search-room-form
+      include ../../../blocks/registration-form/registration-form
 
       +search-room-form({
         header: "Найдём номера под ваши пожелания"
@@ -23,8 +23,8 @@ block content
       })
 
     div(class="frame-column")
-      include ../../blocks/price-calculator-form/price-calculator-form
-      include ../../blocks/sign-in-form/sign-in-form
+      include ../../../blocks/price-calculator-form/price-calculator-form
+      include ../../../blocks/sign-in-form/sign-in-form
 
       +price-calculator-form({
         items: [
@@ -39,8 +39,8 @@ block content
       })
 
     div(class="frame-column")
-      include ../../blocks/datepicker/datepicker
-      include ../../blocks/preview-hotel-room/preview-hotel-room
+      include ../../../blocks/datepicker/datepicker
+      include ../../../blocks/preview-hotel-room/preview-hotel-room
       +datepicker()
 
       +preview-hotel-room({
@@ -49,10 +49,10 @@ block content
         roomPrice: "9 990",
         countRating: "144",
         items: [
-          { pathSrc : '/assets/img/img/image1.png', altAttr: 'image1' },
-          { pathSrc : '/assets/img/img/image2.png', altAttr: 'image2' },
-          { pathSrc : '/assets/img/img/image3.png', altAttr: 'image3' },
-          { pathSrc : '/assets/img/img/image4.png', altAttr: 'image4' },
+          { pathSrc : '/assets/img/image1.png', altAttr: 'image1' },
+          { pathSrc : '/assets/img/image2.png', altAttr: 'image2' },
+          { pathSrc : '/assets/img/image3.png', altAttr: 'image3' },
+          { pathSrc : '/assets/img/image4.png', altAttr: 'image4' },
         ]
       })
 
@@ -61,9 +61,9 @@ block content
         roomPrice: "9 990",
         countRating: "64",
         items: [
-          { pathSrc : '/assets/img/img/image2.png', altAttr: 'image2' },
-          { pathSrc : '/assets/img/img/image10.png', altAttr: 'image2' },
-          { pathSrc : '/assets/img/img/image11.png', altAttr: 'image3' },
-          { pathSrc : '/assets/img/img/image12.png', altAttr: 'image4' },
+          { pathSrc : '/assets/img/image2.png', altAttr: 'image2' },
+          { pathSrc : '/assets/img/image10.png', altAttr: 'image2' },
+          { pathSrc : '/assets/img/image11.png', altAttr: 'image3' },
+          { pathSrc : '/assets/img/image12.png', altAttr: 'image4' },
         ]
       })

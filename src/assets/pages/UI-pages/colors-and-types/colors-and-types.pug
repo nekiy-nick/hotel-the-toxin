@@ -1,4 +1,4 @@
-extends ../../layout/page-layout
+extends ../../../layouts/UI-layout/page-layout
 
 block variables
   - let title = "Colors and Type";
@@ -6,13 +6,12 @@ block variables
   - let keywords = "";
 
 block head
-    //- link(rel="stylesheet" href="./colors-and-types.scss")
 
 block content
 
   .content-wrapper
-    include ../../blocks/color-reference/color-reference
-    include ../../blocks/type-reference/type-reference
+    include ../../../blocks/color-reference/color-reference
+    include ../../../blocks/type-reference/type-reference
     
     .wrapper-block-color
 
