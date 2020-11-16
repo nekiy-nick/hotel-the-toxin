@@ -1,24 +1,28 @@
 mixin input-text-field(options)
   if(!options)
     - options = {}
+  if(!options.type)
+    - options.type = "text"
   -
-    let description = "header"
+    let header = "header"
     let placeholder = "placeholder"
     let name = "name"
     let mode = "modifier"
+    let type = "type of input"
+    let form = "form of input"
 
   if(!options.placeholder)
     - options.placeholder = "Input text"
 
-  div(class="input-text-field") 
-    if(options.description !== undefined)
-      h3(class="input-text-field__header")=options.description
+  div(class="input-text-field")
+    if(options.header !== undefined)
+      h3(class="input-text-field__header")=options.header
     case options.mode
-      when 'masked' 
-        input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type="text" placeholder=options.placeholder name=options.name)
+      when 'masked'
+        input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type=options.type placeholder=options.placeholder name=options.name form=options.form)
       when 'subscribe'
         div(class="input-text-field__subscribe-wrapper")
-          input(class="input-text-field__input input-text-field__input_subscribe" type="text" placeholder=options.placeholder name=options.name)
+          input(class="input-text-field__input input-text-field__input_subscribe" type=options.type placeholder=options.placeholder name=options.name form=options.form)
           button(class="input-text-field__button")
       default
-        input(class="input-text-field__input" type="text" placeholder=options.placeholder name=options.name)  
+        input(class="input-text-field__input" type=options.type placeholder=options.placeholder name=options.name value=options.value form=options.form required)
