@@ -6,16 +6,16 @@ mixin radio-button(options)
   -
     let text = "radio-button text"
     let form = "parrent form"
-    let nameRadioBtn = "name-radio-button"
-    let valueRadioBtn = "value-radio-button"
+    let name = "name-radio-button"
+    let value = "value-radio-button"
 
   label(class="radio-button")
     input(
       type="radio" 
       class="radio-button__input"
       form=options.form
-      name=options.nameRadioBtn
-      value=options.valueRadioBtn
+      name=options.name
+      value=options.value
     )
     span(class="radio-button__btn") 
     span(class="radio-button__text")= options.text
