@@ -18,8 +18,11 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '../pages/UI-pages/form-elements/form-elements.scss';
 @import '../pages/UI-pages/cards/cards.scss';
 @import '../pages/UI-pages/headers-and-footers/headers-and-footers.scss';
+
+@import '../pages/website-pages/registration/registration.scss';
 // импорт стилей для шаблона
 @import '../layouts/UI-layout/page-layout.scss';
+@import '../layouts/website-page-layout/website-page-layout.scss';
 
 html {
   background-color: #fff;
