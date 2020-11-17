@@ -10,12 +10,13 @@ mixin preview-hotel-room(options)
     let roomStatus = "room status"
     let roomPrice = "room price"
     let countRating = "room count rating"
+    let arrows = true
 
   div(class="preview-hotel-room")
     include ../room-details/room-details
     include ../rate-button/rate-button
 
-    div(class="preview-hotel-room__carousel")
+    div(class="preview-hotel-room__carousel" class=options.arrows ? "js-preview-hotel-room__carousel" : "js-preview-hotel-room__carousel_none-arrow")
       for item in options.items
         img(class="preview-hotel-room__image" src=item.pathSrc alt=item.altAttr)
     div(class="preview-hotel-room__details-container")
