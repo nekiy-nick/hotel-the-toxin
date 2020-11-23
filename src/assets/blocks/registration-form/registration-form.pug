@@ -3,63 +3,87 @@ mixin registration-form(options)
     - options = {}
   -
     let header = "header form"
-    let question = "question text"
+    let formId = "registration-form"
+    let href = "reference to an another page"
 
   div(class="registration-form")
     include ../../blocks/input-text-field/input-text-field
     include ../../blocks/radio-button/radio-button
     include ../../blocks/toggle/toggle
     include ../../blocks/button-UI/button-UI
-  
+
     h2(class="registration-form__header")=options.header
-    form(class="registration-form__form")
-      
+    form(class="registration-form__form" id=options.formId method="POST")
+
       +input-text-field({
-        placeholder: "Имя"
+        placeholder: "Имя",
+        name: "userName",
+        form: options.formId
       })
 
       +input-text-field({
-        placeholder: "Фамилия"
+        placeholder: "Фамилия",
+        name: "userSurname",
+        form: options.formId,
       })
 
       +radio-button({
-        text: "Мужчина"
+        text: "Мужчина",
+        name: "sex",
+        value: "man",
+        form: options.formId
       })
 
       +radio-button({
-        text: "Женщина"
+        text: "Женщина",
+        name: "sex",
+        value: "woman",
+        form: options.formId
       })
 
       +input-text-field({
-        description: "дата рождения",
+        header: "дата рождения",
         mode: "masked",
-        placeholder: "ДД.ММ.ГГГГ"
+        placeholder: "ДД.ММ.ГГГГ",
+        name: "birthday",
+        form: options.formId
       })
 
       div(class="registration-form__input-container")
 
         +input-text-field({
-          description: "данные для входа в сервис",
-          placeholder: "Email"
+          header: "данные для входа в сервис",
+          placeholder: "Email",
+          name: "email",
+          type: "email",
+          form: options.formId,
         })
 
         +input-text-field({
-          placeholder: "Пароль"
+          placeholder: "Пароль",
+          name: "password",
+          type: "password",
+          form: options.formId,
         })
 
       +toggle({
-        text: "Получать спецпредложения"
+        text: "Получать спецпредложения",
+        name: "specialOffer",
+        form: options.formId,
       })
 
       +button-UI({
         mode: long,
         text: "перейти к оплате",
-        type:"submit"
+        type:"submit",
+        form: options.formId,
       })
 
     div(class="registration-form__footer")
-      span(class="registration-form__span")=options.question
+      span(class="registration-form__span") Уже есть аккаунт на Toxin
       +button-UI({
-        mode: transperent,
+        mode: transparent,
+        link: true,
+        href: options.href,
         text: "войти"
       })
