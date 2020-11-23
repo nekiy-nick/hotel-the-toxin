@@ -16,7 +16,7 @@ mixin button-UI(options)
     let href = "link href"
 
   if (options.link)
-    a(type=options.type href=options.href class="button-UI" class=options.mode)= options.text
+    a(href=options.href class="button-UI" class=options.mode)= options.text
   else
     button(type=options.type class="button-UI" class=options.mode)= options.text
 
