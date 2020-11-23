@@ -11,13 +11,14 @@
   padding: 12px 18px;
   border-radius: 22px;
   transition: box-shadow .2s ease-in-out;
+  text-decoration: none;
   
   &:hover {
     @include element-gradient($cosmos-color-transparent, $cosmos-gradient-color-transparent);
   }
 
   &:focus {
-    box-shadow: 1px 1px 4px 1px $success-color;
+    @include button-shadow($cosmos-color);
   }
 
   &_transparent {
