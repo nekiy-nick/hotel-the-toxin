@@ -7,13 +7,18 @@ mixin button-UI(options)
 
   if(!options.type)
     - options.type = "button"
-  
+
   -
     let text = "text"
     let mode = "modifier"
     let type = "button type"
+    let link = false
+    let href = "link href"
 
-  button(type=options.type class="button-UI" class=options.mode)= options.text
+  if (options.link)
+    a(type=options.type href=options.href class="button-UI" class=options.mode)= options.text
+  else
+    button(type=options.type class="button-UI" class=options.mode)= options.text
 
 - let transparent = "button-UI_transparent"
 - let long = "button-UI_long"
