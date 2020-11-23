@@ -10,9 +10,8 @@ mixin button-link(options)
   -
     let text = "text"
     let mode = "modifier"
-    let type = "button type"
     let disabled = ""
 
-  button(type=options.type class="button-link" class=options.mode disabled=options.disabled)= options.text
+  button(type="button" class="button-link" class=options.mode disabled=options.disabled)= options.text
 
 - let linkGray = "button-link_gray"

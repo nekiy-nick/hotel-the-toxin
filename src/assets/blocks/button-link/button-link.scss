@@ -14,8 +14,7 @@
 
   &:focus {
     outline: auto;
-    text-shadow: 2px 2px 2px transparent, 
-    4px 4px 4px currentColor;
+    @include text-shadow(currentColor);
   }
 
   &:disabled {
