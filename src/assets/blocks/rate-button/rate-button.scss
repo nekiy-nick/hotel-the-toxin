@@ -6,6 +6,8 @@
   &__star {
     cursor: pointer;
     @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
+    outline: none;
+    border: none;
 
     &:focus {
       @include text-shadow($primary-light);

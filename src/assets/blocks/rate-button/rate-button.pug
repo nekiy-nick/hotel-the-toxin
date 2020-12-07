@@ -3,5 +3,5 @@ mixin rate-button(options)
 
   ul(class="rating js-rating")
     while count < 5
-      li(class="rating__item" data-rating = count++)
-        span(class="rating__star material-icons" tabindex="0") star_border
+      li(class="rating__item js-rating__item" data-rating = count++)
+        button(class="rating__star js-rating__star material-icons" type="button") star_border
