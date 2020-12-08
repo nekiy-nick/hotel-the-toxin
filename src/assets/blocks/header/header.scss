@@ -3,7 +3,7 @@
 }
 
 .header {
-  background-color: #fff;
+  background-color: $light-color;
   width: 100%;
   @include kolonticul-shadow;
 
@@ -108,8 +108,9 @@
     position: absolute;
     top: 1.5rem;
     left: -10px;
-    background-color: white;
+    background-color: $light-color;
     padding: 10px;
+    z-index: 1000;
 
     & + .nav-list__item, & + & {
       margin-left: 28px;
@@ -159,7 +160,7 @@
 .mobile-menu {
   width: 40px;
   height: 40px;
-  background: #fff;
+  background: $light-color;
   border: 1px solid $primary-light;
   border-radius: 4px;
   cursor: pointer;
