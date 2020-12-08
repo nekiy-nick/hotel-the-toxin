@@ -3,41 +3,63 @@
 const rating = document.querySelectorAll('.js-rating');
 
 rating.forEach(item => {
-  item.addEventListener('click', putRatingHandler);
-})
 
-function putRatingHandler(star) {
-  if(!star.target.matches('span')) return;
-  let starList = star.target.parentElement.parentElement.children;
-  let starItem = star.target.parentElement;
-  let starTarget = star.target;
+  item.addEventListener('click', (e) => {
+    const listBtn = item.querySelectorAll('.js-rating__star');
 
-  if (revote(starTarget)) {
-    starTarget.removeAttribute('data-rating');
-    clearRating();
-  } else {
-    clearRating();
-    setRating(starItem);
-  }
+    // инициализация функций
 
-  function setRating(starParent) {
-    starTarget.setAttribute('data-rating', 'check');
-    for (let i = 0; i <= starParent.getAttribute('data-rating'); i++) {
-      starList[i].children[0].innerHTML = 'grade';
-    }
-  }
+    // взять дата-атрибут у кнопки для дальнейшей проверки по нему в цикле
+    const getParentDataCount = (star) => {
+      return star.parentElement.getAttribute('data-rating');
+    };
 
-  function clearRating() {
-    for (let i = 0; i < starList.length; i++) {
-      starList[i].children[0].removeAttribute('data-rating');
-      starList[i].children[0].innerHTML = 'star_border';
-    }
-  }
+    // добавить списку дата-атрибут с поставленной оценкой
+    const setItemDataAttribute = (item) => {
+      item.setAttribute('data-mark', `${getParentDataCount(e.target)}`);
+    };
+    
+    const removeItemDataAttribute = (item) => {
+      item.removeAttribute('data-mark');
+    };
 
-  function revote(star) {
-    if (star.hasAttribute('data-rating')) {
+    const setStarDataAttribute = (star) => {
+      star.setAttribute('data-rating', 'check');
+    };
+
+    const removeStarDataAttribute = (star) => {
       star.removeAttribute('data-rating');
-      return true;
-    }
-  }
-}
+    };
+
+    // установка рейтинга
+    const setRating = (star) => {
+      for (let i = 0; i < getParentDataCount(star); i++) {
+        listBtn[i].innerText = 'grade';
+        setStarDataAttribute(star);
+        setItemDataAttribute(item);
+        star.classList.add('rating__star_check')
+      }
+    };
+
+    // удаление рейтинга
+    const clearRating = (star) => {
+      for (let i = 0; i < listBtn.length; i++) {
+        listBtn[i].innerText = 'star_border';
+        removeStarDataAttribute(listBtn[i]);
+        removeItemDataAttribute(item);
+        listBtn[i].classList.remove('rating__star_check')
+      }
+    };
+
+    const vote = (star) => {
+      if (star.hasAttribute('data-rating')) {
+        clearRating(star);
+      } else {
+        clearRating(star);
+        setRating(star);
+      }
+    };
+
+    vote(e.target);
+  })
+})
