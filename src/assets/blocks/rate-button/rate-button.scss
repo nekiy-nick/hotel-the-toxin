@@ -8,9 +8,28 @@
     @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
     outline: none;
     border: none;
+    transition: transform .4s ease-in-out;
 
     &:focus {
       @include text-shadow($primary-light);
+    }
+
+    &_check {
+      animation: check .2s;
+    }
+
+    @keyframes check {
+      from {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(.8);
+      }
+
+      to {
+        transform: scale(1.2);
+      }
     }
   }
 }
