@@ -60,6 +60,14 @@ rating.forEach(item => {
       }
     };
 
-    vote(e.target);
+    const checkTargetElement = (element) => {
+      for (let btn of listBtn) {
+        if (element == btn) return true;
+      }
+    };
+
+    if (checkTargetElement(e.target)) {
+      vote(e.target);
+    }  
   })
 })
