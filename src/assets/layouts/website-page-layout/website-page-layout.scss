@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: $light-color;
+}
