@@ -3,11 +3,12 @@ mixin icon-text-list(options)
     - options = {}
   if(!options.items)
     - options.items = []
-  
-  for item in options.items
-    .icon-text-list
-      span(class="material-icons icon-text-list__icon")= item.icon
-      .icon-text-list__text-wrapper
-        if(item.header)
-          h4(class="icon-text-list__header")= item.header
-        span(class="icon-text-list__description")= item.description
+
+  .icon-text-list
+    for item in options.items
+      .icon-text-list__item
+        span(class="material-icons icon-text-list__icon")= item.icon
+        .icon-text-list__text-wrapper
+          if(item.header)
+            h4(class="icon-text-list__header")= item.header
+          span(class="icon-text-list__description")= item.description
