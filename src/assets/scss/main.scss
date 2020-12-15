@@ -9,7 +9,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import 'reset.scss';
 @import 'fonts.scss';
 @import 'vars.scss';
-
+@import 'mixin.scss';
 // импорт файлов проекта
 @import '../blocks/blocks';
 
@@ -20,6 +20,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '../pages/UI-pages/headers-and-footers/headers-and-footers.scss';
 
 @import '../pages/website-pages/registration/registration.scss';
+@import '../pages/website-pages/search-room/search-room.scss';
 // импорт стилей для шаблона
 @import '../layouts/UI-layout/page-layout.scss';
 @import '../layouts/website-page-layout/website-page-layout.scss';
