@@ -4,20 +4,17 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
   }
 
   &__name {
-    font-family: $main-font;
-    color: $primary-darker;
-    font-size: $h3-text-size;
-    text-transform: uppercase;
-    font-weight: 700;
+    @include h3-header();
   }
 
   &__span {
+    @include light-text();
     font-size: $h3-text-size;
-    font-family: $main-font;
-    color: $primary-main;
+    letter-spacing: normal;
 
     &_value {
       position: relative;
@@ -37,6 +34,15 @@
     position: relative;
   }
 
+  &__description {
+    margin-top: 5px;
+    text-align: center;
+    @include light-text();
+    font-size: $h3-text-size;
+    letter-spacing: .5px;
+  }
+
+  // Здесь начинаются изменения для стилей jquery плагина
   &__container {
     margin-top: -20px;
   }
