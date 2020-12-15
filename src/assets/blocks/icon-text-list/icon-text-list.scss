@@ -1,9 +1,16 @@
 .icon-text-list {
-  display: flex;
-  max-width: 280px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  border-bottom: 1px solid $primary-lighten;
+  max-width: 280px; 
+
+  &__item {
+    display: flex;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid $primary-lighten;
+
+    & + & {
+      margin-top: 20px;      
+    }
+  }
 
   &__icon {
     font-size: 48px;
@@ -24,9 +31,5 @@
   &__description {
     @include h4-header;
     font-weight: normal;
-  }
-
-  & + & {
-    margin-top: 20px;
-  }
+  }  
 }
