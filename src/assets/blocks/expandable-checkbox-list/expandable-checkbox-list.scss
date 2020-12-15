@@ -1,22 +1,23 @@
 .expandable-checkbox-list {
   max-width: 270px;
-  background-color: #fff;
-  position: relative;
+  background-color: $light-color;
 
   &__head{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
-    padding-left: 4px;
-    padding-bottom: 1px; 
+    height: 44px;
   }
 
   &__header {
+    padding-left: 4px;
     @include h3-header;
   }
 
   &__button {
+    outline: none;
+    border: none;
+    background: transparent;
     color: $primary-main;
     cursor: pointer;
     font-size: 24px;
@@ -24,21 +25,22 @@
     flex-basis: 40px;
     height: 100%;
     align-self: center;
-    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,
+      text-shadow .2s ease-in-out,
+      color .2s ease-in-out;
     transition-delay: .06s;
+
+    &:focus {
+      @include text-shadow(currentColor);
+    }
 
     &_to-top {
       transform: rotate(-180deg);
     }
-    
-    // &:focus {
-    //   text-shadow: 2px 2px 2px transparent, 
-    // 4px 4px 4px currentColor;
-    // }
   }
 
   &__body {
-    padding: calc(1rem-2px) 0;
+    padding-top: 2px;
     padding-left: 5px;
     display: flex;
     flex-flow: column wrap;
@@ -49,7 +51,7 @@
   }
 
   &:hover &__button {
-    color: $primary-darker;
+    color: $primary-dark;
   }
 }
 
