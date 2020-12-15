@@ -1,18 +1,20 @@
 mixin range-slider(options)
   if(!options)
     - options = {}
-  - let name = "header of slider"
+  - let header = "header of slider"
   - let min = "min value range slider"
   - let max = "max value range slider"
   - let nameAtr = "input name"
   - let valueAtr = "input value"
+  - let text = "description text"
 
   .range-slider
     div(class="range-slider__header")
-      h3(class="range-slider__name")=options.name
+      h3(class="range-slider__name")=options.header
       div(class="range-slider__value")
         span(class="range-slider__span range-slider__span_value js-range-slider__min-value")=options.min
-        span(class="range-slider__span")  - 
+        span(class="range-slider__span") &nbsp;-&nbsp;
         span(class="range-slider__span range-slider__span_value js-range-slider__max-value")=options.max
     div(class="range-slider__body")
       input(type="text" min=options.min max=options.max value=options.valueAtr name=options.nameAtr class="range-slider__slider js-range-slider__slider")
+    p(class="range-slider__description")= options.text
