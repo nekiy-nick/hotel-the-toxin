@@ -1,0 +1,15 @@
+extends ../../../layouts/website-page-layout/website-page-layout
+
+block variables
+  - let title = "Registration";
+  - let pageClass = "registration";
+  - let description = "";
+  - let keywords = "";
+
+block content
+  include ../../../blocks/registration-form/registration-form
+  +registration-form({
+    formId: "registration",
+    header: "Регистрация аккаунта",
+    href: "/mock-address/change-me",
+  })

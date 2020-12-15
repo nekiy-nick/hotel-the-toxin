@@ -1,0 +1,15 @@
+.registration {
+  background-image: url('/assets/img/image 4.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & .registration-form {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 545px) {
+  .registration {
+    background: $light-color;
+  }
+}
