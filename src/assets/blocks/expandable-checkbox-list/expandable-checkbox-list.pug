@@ -7,12 +7,36 @@ mixin expandable-checkbox-list(options)
     - options.header = "This is checkbox-list"
   -
     let header = "header text"
+    let mode = "modifier"
 
   div(class="expandable-checkbox-list js-expandable-checkbox-list")
-    div(class="expandable-checkbox-list__head js-expandable-checkbox-list__head")
-      h3(class="expandable-checkbox-list__header")=options.header
-      span(class="expandable-checkbox-list__button js-expandable-checkbox-list__button material-icons") expand_more
-    div(class="expandable-checkbox-list__body expandable-checkbox-list__body_hidden js-expandable-checkbox-list__body")
-      include ../checkbox-button/checkbox-button
-      for item in options.items
-        +checkbox-button({text : item.name})
+    case options.mode
+      when "static"
+        div(class="expandable-checkbox-list__head")
+            h3(class="expandable-checkbox-list__header")=options.header
+        div(class="expandable-checkbox-list__body")
+          include ../checkbox-button/checkbox-button
+          for item in options.items
+            +checkbox-button({
+              text: item.name,
+              mode: item.mode,
+              header: item.header,
+              form: item.form,
+              value: item.value,
+              name: item.name,
+            })
+      default
+        div(class="expandable-checkbox-list__head js-expandable-checkbox-list__head")
+          h3(class="expandable-checkbox-list__header")=options.header
+          button(class="expandable-checkbox-list__button js-expandable-checkbox-list__button material-icons") expand_more
+        div(class="expandable-checkbox-list__body expandable-checkbox-list__body_hidden js-expandable-checkbox-list__body")
+          include ../checkbox-button/checkbox-button
+          for item in options.items
+            +checkbox-button({
+              text: item.name,
+              mode: item.mode,
+              header: item.header,
+              form: item.form,
+              value: item.value,
+              name: item.name,
+            })
