@@ -1,0 +1,43 @@
+.search-room {
+  display: flex;
+  @include frame-container();
+  padding-top: 30px;
+  padding-bottom: 30px;
+ 
+  &__filter {
+    flex: 1 0 320px;
+    .dropdown__wrapper + *, .range-slider + *, .expandable-checkbox-list + *, .rich-checkbox-button + * {
+      margin-top: 20px;
+    }
+  }
+}
+
+.rooms-catalog {
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 20px;  
+
+  &__wrapper {
+    padding-left: 5px;
+
+    .pagination-container {
+      margin: 0 auto;
+    }
+  } 
+
+  &__header {
+    @include h1-header();
+  }
+  
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+
+    .preview-hotel-room + .preview-hotel-room {
+      margin-left: 12px;
+    }
+  }
+  &__row + &__row {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,244 @@
+extends ../../../layouts/website-page-layout/website-page-layout
+
+block variables
+  - let title = "Search-room";
+  - let pageClass = "search-room";
+  - let description = "";
+  - let keywords = "";
+
+block content
+
+  include ../../../blocks/dropdown/dropdown
+  include ../../../blocks/range-slider/range-slider
+  include ../../../blocks/expandable-checkbox-list/expandable-checkbox-list
+  include ../../../blocks/rich-checkbox-button/rich-checkbox-button
+  include ../../../blocks/preview-hotel-room/preview-hotel-room
+  include ../../../blocks/pagination/pagination
+
+  div(class="search-room__filter")
+    +dropdown({
+      name: "даты пребывания в отеле",
+      mode: "date-dropdown",
+      size: medium,
+    })
+
+    +dropdown({
+      name: "гости",
+      header: "Сколько гостей",
+      size: medium,
+      items: [
+        {name: "взрослые"},
+        {name: "взрослые"},
+        {name: "взрослые"},
+      ],
+      buttons: true,
+    })
+
+    +range-slider({
+      name: "диапазон цены",
+      min: "5 000",
+      max: "10 000",
+    })
+
+    +expandable-checkbox-list({
+      header: "правила дома",
+      items: [
+        {name: "Можно курить"},
+        {name: "Можно с питомцами"},
+        {name: "Можно пригласить гостей (до 10 человек)"},
+      ],
+    })
+
+    +rich-checkbox-button({
+      header: "доступность",
+      items: [
+        {
+          header: "Широкий коридор",
+          text: "Ширина коридоров в номере не менее 91см.",
+        },
+        {
+          header: "Помощник для инвалидов",
+          text: "На первом этаже вас встретит специалист и проводит до номера.",
+        },
+      ]
+    })
+
+    +dropdown({
+      name: "удобства номера",
+      header: "Удобства",
+      size: medium,
+      items: [
+        {name: "спальни"},
+        {name: "кровати"},
+        {name: "ванные комнаты"},
+      ],
+      buttons: true,
+    })
+
+    +expandable-checkbox-list({
+      header: "дополнительные удобства",
+      items: [
+        {name: "Завтрак"},
+        {name: "Письменный стол"},
+        {name: "Стул для кормления"},
+        {name: "Кроватка"},
+        {name: "Телевизор"},
+        {name: "Шампунь"},
+      ],
+    })
+
+  section(class="search-room__rooms-catalog rooms-catalog__wrapper")
+    h1(class="rooms-catalog__header") Номера, которые мы для вас подобрали
+    div(class="rooms-catalog")
+      div(class="rooms-catalog__row")
+        +preview-hotel-room({
+          roomNumber: "888",
+          roomStatus: "люкс",
+          roomPrice: "9 990",
+          countRating: "144",
+          arrows: true,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "840",
+          roomPrice: "9 990",
+          countRating: "64",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image6.png", altAttr: "hotel-room-6"},
+            {pathSrc: "/assets/img/image7.png", altAttr: "hotel-room-7"},
+            {pathSrc: "/assets/img/image8.png", altAttr: "hotel-room-8"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "980",
+          roomStatus: "люкс",
+          roomPrice: "8 500",
+          countRating: "34",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+            {pathSrc: "/assets/img/image7.png", altAttr: "hotel-room-7"},
+            {pathSrc: "/assets/img/image8.png", altAttr: "hotel-room-8"},
+          ]
+        })
+      div(class="rooms-catalog__row")
+        +preview-hotel-room({
+          roomNumber: "856",
+          roomPrice: "7 300",
+          countRating: "18",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "740",
+          roomPrice: "6 000",
+          countRating: "43",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "982",
+          roomPrice: "5 800",
+          countRating: "55",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+      div(class="rooms-catalog__row")
+        +preview-hotel-room({
+          roomNumber: "678",
+          roomPrice: "5 500",
+          countRating: "44",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "458",
+          roomPrice: "5 300",
+          countRating: "38",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "350",
+          roomPrice: "5 000",
+          countRating: "76",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+
+      div(class="rooms-catalog__row")
+        +preview-hotel-room({
+          roomNumber: "666",
+          roomPrice: "5 000",
+          countRating: "24",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "444",
+          roomPrice: "5 000",
+          countRating: "14",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+        +preview-hotel-room({
+          roomNumber: "352",
+          roomPrice: "5 000",
+          countRating: "54",
+          arrows: false,
+          items: [
+            {pathSrc: "/assets/img/image1.png", altAttr: "hotel-room-1"},
+            {pathSrc: "/assets/img/image2.png", altAttr: "hotel-room-2"},
+            {pathSrc: "/assets/img/image3.png", altAttr: "hotel-room-3"},
+            {pathSrc: "/assets/img/image4.png", altAttr: "hotel-room-4"},
+          ]
+        })
+    +pagination()
