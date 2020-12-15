@@ -6,13 +6,13 @@
   justify-content: center;
   transition: .2s;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: $light-color;
   min-height: 44px;
 
   &:hover {
     border-color: $primary-main;
     
-    .dropdown__drop-arrow {
+    .dropdown__button {
       color: $primary-dark;
     }
     .dropdown__body {
@@ -29,19 +29,24 @@
 
     &_small-width {
       max-width: 150px;
+
+      .dropdown__button {
+        padding-left: 0;
+      }
     }
   }
 
   &__name {
     @include h3-header;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
   }
 
   &__head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-height: 44px;
+    max-width: 100%;
+    height: 42px;
 
     &_input-date {
 
@@ -57,12 +62,6 @@
         color: $primary-dark;
       }
     }
-
-    &_input-date .dropdown__button {
-      padding-right: 20px;
-      padding-left: 0px;
-     
-    }
   }
 
   &__button {
@@ -71,15 +70,15 @@
     cursor: pointer;
     padding: 0 10px;
     color: $primary-main;
-    height: 44px;
-    // width: 44px;
+    flex-basis: 40px;
+    height: 100%;
     font-size: $h1-text-size;
-    transition: text-shadow .2s ease-in-out;
+    transition: text-shadow .2s ease-in-out,
+    color .2s ease-in-out;
 
     &:focus {
       outline: none;
-      text-shadow: 2px 2px 2px transparent, 
-    4px 4px 4px currentColor;
+      @include text-shadow(currentColor);
     }
   }
 
@@ -94,24 +93,37 @@
   &__body {
     display: flex;
     flex-flow: inherit;
-    padding: 5px;
     border-top: 1px solid $primary-light;
 
     &_hidden {
       display: none;
+    }
+
+    &_input-date {
+      border-top: none;
+      padding: 0;
+      position: relative;
+    }
+
+    & .datepicker {
+      position: absolute;
+      top: 5px;
+      left: 0;
     }
   }
 
   &__buttons-wrapper {
     display: flex;
     width: 100%;
-    padding-top: 22px;
-    padding-bottom: 6px;
-    padding-left: 10px;
+    margin-top: 6px;
     justify-content: space-between;
 
     &_visible {
       display: flex;
+    }
+
+    & .button-link  {
+      padding-left: 14px;
     }
   }
 }
@@ -120,19 +132,15 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  padding: 6px 6px 6px 15px;
 
   & + & {
-    margin-top: 6px;
+    padding-top: 2px;
   }
 
   &__text {
-    font-family: $main-font;
-    font-size: $h3-text-size;
-    color: $primary-darker;
-    font-weight: bold;
+    @include h3-header();
     align-self: center;
-    text-transform: uppercase;
-    padding-left: 10px;
     letter-spacing: 1px;
   }
 
@@ -158,10 +166,7 @@
   }
 
   &__count {
-    font-family: $main-font;
-    font-size: $h3-text-size;
-    color: $primary-darker;
-    font-weight: bold;
+    @include h3-header();
     width: 30px;
     display: inline-block;
     padding: 0 10px;
