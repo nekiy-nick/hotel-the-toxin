@@ -1,6 +1,5 @@
 .feedback {
-  max-width: 770px;
-  padding: 0 2rem;
+  max-width: 720px;
 
   &__user {
     display: flex;
@@ -10,7 +9,7 @@
       width: 46px;
       height: 46px;
       border-radius: 23px;
-      background-color: #fff;
+      background-color: $light-color;
     }
 
     &-name {
