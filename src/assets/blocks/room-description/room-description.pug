@@ -1,0 +1,19 @@
+mixin room-description(options)
+  if(!options)
+    - options = {}
+  if(!options.roomNumber)
+    - options.roomNumber = "000"
+  if(!options.roomPrice)
+    - options.roomPrice = "refine"
+  -
+    let roomNumber = "room number"
+    let roomStatus = "room status"
+    let roomPrice = "room price"
+  
+  div(class="room-description")
+      p(class="room-description__room-number-container")
+        span(class="room-description__room-number")= options.roomNumber
+        span(class="room-description__room-status")= options.roomStatus
+      p(class="room-description__room-price-container")
+        span(class="room-description__room-price")= options.roomPrice
+        span(class="room-description__period") в сутки
