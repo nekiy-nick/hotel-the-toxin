@@ -1,0 +1,29 @@
+include ../feedback/feedback
+
+mixin feedback-wrapper(options)
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = []
+
+  -
+    let header = "header of feedback-wrapper"
+
+  if(!options.header)
+    - options.header = 'This is a feedback wrapper block'
+
+  div(class="feedback-wrapper js-feedback-wrapper")
+    div(class="feedback-wrapper__header-wrapper")
+      if(options.header)
+        h2(class="feedback-wrapper__header")= options.header
+      p(class="feedback-wrapper__feedback-text-count")
+        span(class="feedback-wrapper__feedback-count js-feedback-wrapper__feedback-count")
+        span(class="feedback-wrapper__feedback-span js-feedback-wrapper__feedback-span")
+    for item in options.items
+      +feedback({
+        userPhoto: item.userPhoto,
+        userName: item.userName,
+        comment: item.comment,
+        date: item.date,
+        like: item.like,
+      })

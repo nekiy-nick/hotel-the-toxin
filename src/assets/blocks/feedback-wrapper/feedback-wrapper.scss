@@ -1,0 +1,25 @@
+.feedback-wrapper {
+
+  &__header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.4rem;
+  }
+
+  &__header {
+    @include h2-header();
+  }
+
+  &__feedback-count {
+    margin-right: 4px;
+  }
+
+  &__feedback-count, &__feedback-span {
+    @include light-text();
+  }
+
+  .feedback + .feedback {
+    margin-top: 1.725rem;
+  }
+}
