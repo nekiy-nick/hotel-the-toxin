@@ -133,7 +133,8 @@
     right: -22px;
     border: none;
     line-height: 0;
-    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,
+    text-shadow .2s ease-in-out;
 
     &_up {
       transform: rotate(180deg);
