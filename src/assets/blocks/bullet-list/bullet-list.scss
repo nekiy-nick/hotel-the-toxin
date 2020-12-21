@@ -1,10 +1,25 @@
 .bullet-list {
-  max-width: 300px;
-  padding: 0 10px;
+  max-width: 320px;
+  height: max-content;
+
+  &_none-dots {
+
+    & .bullet-list__item {
+
+      &::before {
+        width: 0;
+      }
+    }
+
+    .bullet-list__header, .bullet-list__items-wrapper {
+      padding-left: 0;
+    }
+  }
 
   &__header {
-  @include h3-header();
-  margin-bottom: 14px;
+    @include h2-header();
+    padding-left: 20px;
+    margin-bottom: 18px;
   }
 
   &__items-wrapper {
@@ -12,13 +27,9 @@
     padding-left: 22px;
   }
 
-
   &__item {
-    font-family: $main-font;
-    font-size: $body-text-size;
-    color: $primary-dark;
+    @include h4-header();
     line-height: $body-line-height;
-    letter-spacing: 1px;
     position: relative;
 
     &::before {
