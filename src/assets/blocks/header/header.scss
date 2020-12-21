@@ -17,6 +17,10 @@
     align-items: center;
   }
 
+  &__menu + &__buttons-wrapper {
+    margin-left: 1rem;
+  }
+
   &__buttons-wrapper {
     display: flex;
 
