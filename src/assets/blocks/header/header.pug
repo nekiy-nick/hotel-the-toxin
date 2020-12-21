@@ -29,7 +29,7 @@ mixin header(options)
                   ul(class="nav-list__item nav-list__inner-list nav-list__inner-list_hidden js-nav-list__inner-list")
                     for list in item.items
                       li(class="nav-list__inner-item")
-                        a(class="nav-list__inner-link" href=list.linkHref)= list.linkText
+                        a(class="nav-list__inner-link" href="/mock-address/change-me")= list.linkText
               else
                 li(class="nav-list__item")
                   a(class="nav-list__link" class=item.linkMode href=item.linkHref)= item.linkText
@@ -42,10 +42,14 @@ mixin header(options)
               include ../button-UI/button-UI
               +button-UI({
                 mode: transparent,
-                text: options.button1Text
+                text: options.button1Text,
+                link: true,
+                href: "/mock-address/change-me",
               })
               +button-UI({
-                text: options.button2Text
+                text: options.button2Text,
+                link: true,
+                href: "/mock-address/change-me",
               })
       //- мобильная версия меню
       div(class="header__mobile-menu-container mobile-menu js-header__mobile-menu-container")
