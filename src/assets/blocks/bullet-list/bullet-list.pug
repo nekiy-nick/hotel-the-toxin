@@ -5,11 +5,15 @@ mixin bullet-list(options)
     - options.items = [{text : 'Item 1'}, {text : 'Item 2'}, {text : 'Item 3'}]
   -
     let header = "bullet-list header"
+    let mode = "mode of the list"
     
-  .bullet-list
-    if(options.header !== undefined)
-      h3(class="bullet-list__header")= options.header
+  section(class="bullet-list" class=options.mode)
 
+    if(options.header !== undefined)
+      h2(class="bullet-list__header")= options.header
     ul(class="bullet-list__items-wrapper")
       for item in options.items
-        li(class="bullet-list__item")= item.text
+        li(class="bullet-list__item")
+          p(class="bullet-list__item-text")= item.text
+
+- let noneDots = "bullet-list_none-dots"
