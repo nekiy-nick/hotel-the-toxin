@@ -33,25 +33,21 @@
   }
 
   &__description-color {
-    padding-left: 40px;
+    margin-left: 40px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    line-height: 29px;
   }
 
   &__name {
     text-transform: capitalize;
-    font-size: $h2-text-size;
-    font-family: $secondary-font;
-    font-weight: bold;
-    color: $primary-darker;
+    @include h2-header();
+    line-height: $h1-line-height;
   }
   
   &__hex {
     text-transform: uppercase;
-    font-size: $h2-text-size;
-    font-family: $secondary-font;
-    color: $primary-darker;
+    @include h2-header();
+    font-weight: normal;
   }
 }
