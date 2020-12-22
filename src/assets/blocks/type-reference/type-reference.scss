@@ -35,25 +35,15 @@
     flex-basis: 380px;
 
     &_h1 {
-      font-family: $secondary-font;
-      font-size: $h1-text-size;
-      line-height: $h1-line-height;
-      font-weight: bold;
+      @include h1-header();
     }
 
     &_h2 {
-      font-family: $secondary-font;
-      font-size: $h2-text-size;
-      line-height: $h2-line-height;
-      font-weight: bold;
+      @include h2-header();
     }
 
     &_h3 {
-      font-family: $main-font;
-      font-size: $h3-text-size;
-      line-height: $h3-line-height;
-      font-weight: bold;
-      text-transform: uppercase;
+      @include h3-header();
     }
 
     &_body {
