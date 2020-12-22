@@ -1,31 +1,24 @@
 // Обёртка для элементов страницы colors-ant-type
 .content-wrapper {
   margin-top: 145px;
+  padding: 0 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
 .wrapper-block-color {
-  margin-left: 150px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  // следующее правило можно использовать в будущем вместо div обёрток
-  // пока поддерживается в Firefox
-  // gap: 50px;
-  &_item + &_item {
+  margin-left: 100px;
+
+  &__item + &__item {
     margin-top: 20px;
   }
 }
 .wrapper-block-type {
-  display: flex;
-  flex-flow: column wrap;
   flex-basis: 430px;
-  // следующее правило можно использовать в будущем вместо div обёрток
-  // пока поддерживается в Firefox
-  // gap: 50px;
-  &_item + &_item {
+  margin-left: 100px;
+
+  &__item + &__item {
     margin-top: 50px;
   }
 }
