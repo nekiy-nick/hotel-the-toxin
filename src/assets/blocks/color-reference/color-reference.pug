@@ -3,6 +3,8 @@
 //- hex  - текст HEX-номер этого цвета
 //- styleModes - модификатор для палитры цвета
 mixin color-reference(options)
+  if(!options)
+    - options = {}
   -
     let colorName = "name"
     let colorHex = "hex"
