@@ -1,5 +1,3 @@
-@import '../../scss/mixin.scss';
-
 .input-text-field {
   display: flex;
   flex-flow: column;
@@ -28,19 +26,15 @@
   }
 
   &__header {
-    font-family: $main-font;
-    font-size: $h3-text-size;
-    color: $primary-darker;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding-bottom: 5px;
+    @include h3-header();
+    padding-bottom: 4px;
   }
 
   &__input {
-    font-size: $body-text-size;
-    font-family: $main-font;
+    @include light-text();
     color: $primary-light;
-    padding-left: 15px;
+    letter-spacing: normal;
+    padding-left: 14px;
     border-radius: 6px;
     width: 100%;
     height: 44px;
@@ -68,12 +62,13 @@
 
   &__button {
     position: relative;
-    background-color: #fff;
+    background-color: transparent;
     outline: none;
     width: 44px;
     height: 44px;
     cursor: pointer;
     border: none;
+    transition: text-shadow .2s ease-in-out;
 
     &:after {
       font-family: 'Material Icons';
@@ -81,13 +76,13 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 24px;
+      font-size: $h1-text-size;
       transform: translate(-50%, -50%);
       @include gradient-text($cosmos-color, 0%, $cosmos-gradient-color, 100%, 180deg);
     }
 
     &:focus {
-      outline: 1px dashed $primary-dark;
+      @include text-shadow($cosmos-color);
     }
   }
 }
