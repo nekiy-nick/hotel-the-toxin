@@ -14,6 +14,29 @@ mixin dropdown(options)
     let mode = "modifier"
     let firstFilterDateSpan = ""
     let seconFilterdDateSpan = ""
+    let items = "items of dropdown"
+    let type = "type of dropdown's items"
+
+  -
+    if (options.type == "guests") {
+      dataHeaderDescription = "guests"
+      header = "Сколько гостей"
+      items = [
+        {name: "взрослые"},
+        {name: "дети"},
+        {name: "младенцы"},
+      ]
+    } else if (options.type === "apartaments") {
+      dataHeaderDescription = "apartaments"
+      header = "Удобства номера"
+      items = [
+        {name: "спальни"},
+        {name: "кровати"},
+        {name: "ванные комнаты"}
+      ]
+    } else {
+      items = []
+    }
 
   if(!options.header)
     - options.header = 'This is dropdown'
@@ -35,32 +58,31 @@ mixin dropdown(options)
               mode: 'masked',
               size: small
             })
-            button(class="dropdown__button js-dropdown__button material-icons") expand_more
-          div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
+            button(type="button" class="dropdown__button js-dropdown__button material-icons") expand_more
+          div(class="dropdown__body dropdown__body_input-date dropdown__body_hidden js-dropdown__body")
           //- здесь наверное должен лежать календарь
         when "filter-date-dropdown"
-          div(class="dropdown__head dropdown__head_filter-date-dropdown js-dropdown__head_filter-date-dropdown js-dropdown__head")
+          div(class="dropdown__head dropdown__head_input-date dropdown__head_filter-date-dropdown js-dropdown__head_filter-date-dropdown js-dropdown__head")
             p(class="dropdown__header")
               span(class="dropdown__header_filter-date-dropdown")= options.firstFilterDateSpan
-              span(class="dropdown__header_filter-date-dropdown")  — 
+              span(class="dropdown__header_filter-date-dropdown") &nbsp;—&nbsp;
               span(class="dropdown__header_filter-date-dropdown")= options.seconFilterdDateSpan
-            button(class="dropdown__button js-dropdown__button material-icons") expand_more
-          div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
+            button(type="button" class="dropdown__button js-dropdown__button material-icons") expand_more
+          div(class="dropdown__body dropdown__body_input-date dropdown__body_hidden js-dropdown__body")
           //- здесь наверное должен лежать календарь
         default
-          div(class="dropdown__head js-dropdown__head" data-description=options.dataHeaderDescription)
-            span(class="dropdown__header js-dropdown__header" title=options.header)= options.header
-            button(class="dropdown__button js-dropdown__button material-icons") expand_more
+          div(class="dropdown__head js-dropdown__head" data-description=dataHeaderDescription)
+            span(class="dropdown__header js-dropdown__header" title=header)= header
+            button(type="button" class="dropdown__button js-dropdown__button material-icons") expand_more
 
           div(class="dropdown__body dropdown__body_hidden js-dropdown__body")
-
-            for item in options.items
+            for item in items
               div(class="dropdown__item dropdown-item js-dropdown__item")
                 span(class="dropdown-item__text")= item.name
                 div(class="dropdown-item__calc-wrapper")
-                  button(disabled="disabled" class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__minus-btn") -
+                  button(type="button" disabled="disabled" class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__minus-btn") -
                   span(class="dropdown-item__count js-dropdown-item__count") 0
-                  button(class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__plus-btn") +
+                  button(type="button" class="dropdown-item__btn js-dropdown-item__count-btn js-dropdown-item__plus-btn") +
 
             if options.buttons
               div(class="dropdown__buttons-wrapper js-dropdown__buttons-wrapper")
