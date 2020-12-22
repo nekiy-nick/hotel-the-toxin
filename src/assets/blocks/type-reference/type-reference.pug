@@ -4,6 +4,8 @@
 //- size - модификаторы стиля для HTML тега
 //- styleText - модификаторы для текста
 mixin type-reference(options)
+  if(!options)
+    - options = {}
   -
     let tagName = "name"
     let text = "text"
