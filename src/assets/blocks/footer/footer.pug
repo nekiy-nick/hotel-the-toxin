@@ -22,43 +22,42 @@ mixin footer(options)
             img(class="footer__logotype" src=options.logoSrc)
           p(class="footer__main-text")= options.mainText
 
-        div(class="footer__menu-container")
-          div(class="footer__menu-list-container")
+        div(class="footer__menu-list-container")
 
-            +menu-list({
-              header: "navigation",
-              items: [
-                { linkText: "About us", linkHref: "https://google.com"},
-                { linkText: "News"},
-                { linkText: "Support"},
-                { linkText: "Products"},
-              ]
-            })
-            +menu-list({
-              header: "about us",
-              items: [                
-                { linkText: "Who we are"},
-                { linkText: "Our team"},
-                { linkText: "Careers"},
-                { linkText: "Investors"},
-              ]
-            })
-            +menu-list({
-              header: "support",
-              items: [
-                { linkText: "Documentation"},
-                { linkText: "Community"},
-                { linkText: "Get in Touch"},
-              ]
-            })
+          +menu-list({
+            header: "navigation",
+            items: [
+              { linkText: "About us", linkHref: "/mock-address/change-me"},
+              { linkText: "News", linkHref: "/mock-address/change-me"},
+              { linkText: "Support", linkHref: "/mock-address/change-me"},
+              { linkText: "Products", linkHref: "/mock-address/change-me"},
+            ]
+          })
+          +menu-list({
+            header: "about us",
+            items: [
+              { linkText: "Who we are", linkHref: "/mock-address/change-me"},
+              { linkText: "Our team", linkHref: "/mock-address/change-me"},
+              { linkText: "Careers", linkHref: "/mock-address/change-me"},
+              { linkText: "Investors", linkHref: "/mock-address/change-me"},
+            ]
+          })
+          +menu-list({
+            header: "support",
+            items: [
+              { linkText: "Documentation", linkHref: "/mock-address/change-me"},
+              { linkText: "Community", linkHref: "/mock-address/change-me"},
+              { linkText: "Get in Touch", linkHref: "/mock-address/change-me"},
+            ]
+          })
 
-          section(class="footer__subscribe-container")
-            h2(class="footer__subscribe-header") subscribe to our newsletter
-            p(class="footer__subscribe-text") Receive our latest news and promotions in your inbox!
-            +input-text-field({
-              placeholder: "Your email address",
-              mode: "subscribe"
-            })
+        section(class="footer__subscribe-container")
+          h2(class="footer__subscribe-header") subscribe to our newsletter
+          p(class="footer__subscribe-text") Receive our latest news and promotions in your inbox!
+          +input-text-field({
+            placeholder: "Your email address",
+            mode: "subscribe"
+          })
 
     div(class="footer__secondary-info-container")
       div(class="footer__frame-container")
