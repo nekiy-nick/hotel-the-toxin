@@ -54,10 +54,14 @@ mixin footer(options)
         section(class="footer__subscribe-container")
           h2(class="footer__subscribe-header") подписка
           p(class="footer__subscribe-text") Получайте специальные предложения и новости сервиса
-          +input-text-field({
-            placeholder: "Email",
-            mode: "subscribe"
-          })
+          form(class="footer__subscribe-form" id="subscribe-form" method="POST")
+            +input-text-field({
+              placeholder: "Email",
+              mode: "subscribe",
+              name: "subscribe-input",
+              form: "subscribe-form",
+              type: "email",
+            })
 
     div(class="footer__secondary-info-container")
       div(class="footer__frame-container")
