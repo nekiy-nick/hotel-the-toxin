@@ -25,43 +25,43 @@ mixin footer(options)
         div(class="footer__menu-list-container")
 
           +menu-list({
-            header: "navigation",
+            header: "навигация",
             items: [
-              { linkText: "About us", linkHref: "/mock-address/change-me"},
-              { linkText: "News", linkHref: "/mock-address/change-me"},
-              { linkText: "Support", linkHref: "/mock-address/change-me"},
-              { linkText: "Products", linkHref: "/mock-address/change-me"},
+              { linkText: "О нас", linkHref: "/mock-address/change-me"},
+              { linkText: "Новости", linkHref: "/mock-address/change-me"},
+              { linkText: "Служба поддержки", linkHref: "/mock-address/change-me"},
+              { linkText: "Услуги", linkHref: "/mock-address/change-me"},
             ]
           })
           +menu-list({
-            header: "about us",
+            header: "о нас",
             items: [
-              { linkText: "Who we are", linkHref: "/mock-address/change-me"},
-              { linkText: "Our team", linkHref: "/mock-address/change-me"},
-              { linkText: "Careers", linkHref: "/mock-address/change-me"},
-              { linkText: "Investors", linkHref: "/mock-address/change-me"},
+              { linkText: "О сервисе", linkHref: "/mock-address/change-me"},
+              { linkText: "Наша команда", linkHref: "/mock-address/change-me"},
+              { linkText: "Вакансии", linkHref: "/mock-address/change-me"},
+              { linkText: "Инвесторы", linkHref: "/mock-address/change-me"},
             ]
           })
           +menu-list({
-            header: "support",
+            header: "Служба поддержки",
             items: [
-              { linkText: "Documentation", linkHref: "/mock-address/change-me"},
-              { linkText: "Community", linkHref: "/mock-address/change-me"},
-              { linkText: "Get in Touch", linkHref: "/mock-address/change-me"},
+              { linkText: "Соглашения", linkHref: "/mock-address/change-me"},
+              { linkText: "Сообщества", linkHref: "/mock-address/change-me"},
+              { linkText: "Связь с нами", linkHref: "/mock-address/change-me"},
             ]
           })
 
         section(class="footer__subscribe-container")
-          h2(class="footer__subscribe-header") subscribe to our newsletter
-          p(class="footer__subscribe-text") Receive our latest news and promotions in your inbox!
+          h2(class="footer__subscribe-header") подписка
+          p(class="footer__subscribe-text") Получайте специальные предложения и новости сервиса
           +input-text-field({
-            placeholder: "Your email address",
+            placeholder: "Email",
             mode: "subscribe"
           })
 
     div(class="footer__secondary-info-container")
       div(class="footer__frame-container")
-        span(class="footer__copyright-span") Copyright &#169; 2018 Toxin UI Kit. All rights reserved.
+        span(class="footer__copyright-span") Copyright &#169; 2018 Toxin отель. Все права защищены.
         ul(class="footer__social-sites social-sites")
           for link in options.socialSites
             li(class="social-sites__item")
