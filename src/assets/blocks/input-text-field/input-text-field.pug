@@ -22,7 +22,7 @@ mixin input-text-field(options)
         input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type=options.type placeholder=options.placeholder name=options.name form=options.form)
       when 'subscribe'
         div(class="input-text-field__subscribe-wrapper")
-          input(class="input-text-field__input input-text-field__input_subscribe" type=options.type placeholder=options.placeholder name=options.name form=options.form)
+          input(class="input-text-field__input input-text-field__input_subscribe" type="email" placeholder=options.placeholder name=options.name form=options.form required)
           button(class="input-text-field__button" form=options.form type="submit")
       default
         input(class="input-text-field__input" type=options.type placeholder=options.placeholder name=options.name value=options.value form=options.form required)
