@@ -33,8 +33,9 @@
 
   &_long {
     letter-spacing: 1px;
-    min-width: 320px;
+    min-width: 266px;
     position: relative;
+    width: 100%;
 
     &:after {
       font-family: 'Material Icons';
