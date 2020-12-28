@@ -24,11 +24,13 @@
 @import 'icon-text-list/icon-text-list';
 // импорт стилей блока отзыва
 @import 'feedback/feedback';
+@import 'feedback-wrapper/feedback-wrapper';
 // импорт стилей блока dropdown
 @import 'dropdown/dropdown';
+@import 'date-dropdown/date-dropdown';
 // импорт блока диаграмма
 @import 'pie-chart/pie-chart';
-
+@import 'room-collage/room-collage';
 @import 'range-slider/range-slider';
 @import 'pagination/pagination';
 
@@ -39,7 +41,7 @@
 @import 'registration-form/registration-form';
 @import 'search-room-form/search-room-form';
 @import 'price-calculator-form/price-calculator-form';
-@import 'room-details/room-details';
+@import 'room-description/room-description';
 @import 'datepicker/datepicker';
 @import 'preview-hotel-room/preview-hotel-room';
 // импорт стилей компонентов со страницы headers and footers
