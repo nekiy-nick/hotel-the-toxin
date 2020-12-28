@@ -21,6 +21,9 @@ $material-icons-font-path: '~material-icons/iconfont/';
 
 @import '../pages/website-pages/registration/registration.scss';
 @import '../pages/website-pages/search-room/search-room.scss';
+@import '../pages/website-pages/sign-in/sign-in.scss';
+@import '../pages/website-pages/landing-page/landing-page.scss';
+@import '../pages/website-pages/room-details/room-details.scss';
 // импорт стилей для шаблона
 @import '../layouts/UI-layout/page-layout.scss';
 @import '../layouts/website-page-layout/website-page-layout.scss';
