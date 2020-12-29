@@ -1,0 +1,14 @@
+.logotype {
+
+  &:focus {
+    outline: none;
+  }
+
+  &__img {
+    transition: filter .2s ease-in-out;
+  }
+
+  &:focus > .logotype__img {
+    filter: drop-shadow(4px 4px 2px $cosmos-color);
+  }
+}
