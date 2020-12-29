@@ -11,9 +11,9 @@ mixin header(options)
     let linkMode = "modifier"
 
   header(class="header")
+    include ../logotype/logotype
     div(class="frame-container")
-      a(class="header__main-link" href="#")
-        img(class="header__logotype" src=options.srcImg alt="logotype")
+      +logotype()
 
       div(class="header__content-container")
 
