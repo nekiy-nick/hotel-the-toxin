@@ -2,7 +2,7 @@
   @include card-block;
 
   &__header {
-    @include h2-header;
+    @include h1-header;
     margin-bottom: 1.4rem;
   }
 
@@ -18,10 +18,8 @@
   }
 
   &__span {
-    font-size: $body-text-size;
+    @include light-text();
     color: #000;
-    font-family: $main-font;
-    letter-spacing: .8px;
   }
 
   &__footer {
@@ -31,7 +29,7 @@
     align-items: center;
 
     .button-UI {
-      padding: 0 20px;
+      padding: 12px 20px;
     }
   }
 }
