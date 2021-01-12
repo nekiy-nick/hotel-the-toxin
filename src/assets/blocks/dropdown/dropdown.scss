@@ -1,52 +1,58 @@
 .dropdown {
-  border: 1px solid $primary-light;
-  display: flex;
-  overflow: hidden;
-  flex-flow: column wrap;
-  justify-content: center;
-  transition: .2s;
-  border-radius: 6px;
-  background-color: $light-color;
-  min-height: 44px;
+  max-width: 320px;
 
-  &:hover {
-    border-color: $primary-main;
-    
+  &_medium-width {
+    max-width: 266px;
+  }
+
+  &_small-width {
+    max-width: 150px;
+
     .dropdown__button {
-      color: $primary-dark;
-    }
-    .dropdown__body {
-      border-top-color: $primary-main;
+      padding-left: 0;
     }
   }
 
   &__wrapper {
-    max-width: 320px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: $light-color;
+    min-height: 44px;
+    position: relative;
 
-    &_medium-width {
-      max-width: 266px;
-    }
+    &:hover, &:focus-within {
 
-    &_small-width {
-      max-width: 150px;
+      .dropdown__head, .dropdown__body {
+        border-color: $primary-main;
+      }
 
       .dropdown__button {
-        padding-left: 0;
+        color: $primary-dark;
       }
     }
   }
 
   &__name {
     @include h3-header;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
   }
 
   &__head {
+    border: 1px solid $primary-light;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
     height: 42px;
+    border-radius: 6px;
+    transition: border-color .2s ease-in-out;
+
+    &_opened {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
     &_input-date {
 
@@ -83,17 +89,24 @@
   }
 
   &__header {
-    color: $primary-dark;
-    font-size: $body-text-size;
-    font-family: $main-font;
+    @include body-text();
     padding-left: 15px;
     letter-spacing: 1px;
   }
 
   &__body {
+    background-color: $light-color;
+    width: 100%;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 990;
     display: flex;
     flex-flow: inherit;
-    border-top: 1px solid $primary-light;
+    border: 1px solid $primary-light;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: border-color .2s ease-in-out;
 
     &_hidden {
       display: none;
@@ -154,6 +167,7 @@
     font-size: $body-text-size;
     outline: none;
     transition: border-color .2s ease-in-out;
+    background-color: transparent;
 
     &:hover, &:focus {
       border-color: $primary-main;
