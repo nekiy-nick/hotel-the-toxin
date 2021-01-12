@@ -41,12 +41,12 @@ mixin dropdown(options)
   if(!options.header)
     - options.header = 'This is dropdown'
 
-  div(class="dropdown__wrapper" class=options.size)
+  div(class="dropdown" class=options.size)
 
     if(options.name !== undefined)
       h3(class="dropdown__name")= options.name
 
-    div(class="dropdown js-dropdown")
+    div(class="dropdown__wrapper js-dropdown")
 
       case options.mode
         when "date-dropdown"
@@ -97,5 +97,5 @@ mixin dropdown(options)
                   mode : "js-dropdown-successBtn",
                 })
           
-- let medium = "dropdown__wrapper_medium-width"
-- let small = "dropdown__wrapper_small-width"
+- let medium = "dropdown_medium-width"
+- let small = "dropdown_small-width"
