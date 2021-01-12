@@ -10,6 +10,7 @@ mixin input-text-field(options)
     let mode = "modifier"
     let type = "type of input"
     let form = "form of input"
+    let label = "text of label input"
 
   if(!options.placeholder)
     - options.placeholder = "Input text"
@@ -17,12 +18,18 @@ mixin input-text-field(options)
   div(class="input-text-field")
     if(options.header !== undefined)
       h3(class="input-text-field__header")=options.header
-    case options.mode
-      when 'masked'
-        input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type=options.type placeholder=options.placeholder name=options.name form=options.form)
-      when 'subscribe'
-        div(class="input-text-field__subscribe-wrapper")
+
+    if options.mode !== 'subscribe'
+      label(class="input-text-field__label")=options.header || options.label || 'text field'
+
+        case options.mode
+          when 'masked'
+            input(class="input-text-field__input input-text-field__input_masked js-input-text-field__input_masked" type=options.type placeholder=options.placeholder name=options.name form=options.form)
+
+          default
+            input(class="input-text-field__input" type=options.type placeholder=options.placeholder name=options.name value=options.value form=options.form required)
+    else
+      div(class="input-text-field__subscribe-wrapper")
+        label(class="input-text-field__label")=options.header || options.label || 'text field'
           input(class="input-text-field__input input-text-field__input_subscribe" type="email" placeholder=options.placeholder name=options.name form=options.form required)
-          button(class="input-text-field__button" form=options.form type="submit")
-      default
-        input(class="input-text-field__input" type=options.type placeholder=options.placeholder name=options.name value=options.value form=options.form required)
+        button(class="input-text-field__button" form=options.form type="submit")
