@@ -27,7 +27,13 @@
 
   &__header {
     @include h3-header();
-    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  &__label {
+    color: transparent;
+    font-size: 0px;
+    line-height: 0px;
   }
 
   &__input {
