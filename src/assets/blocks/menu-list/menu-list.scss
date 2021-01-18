@@ -15,8 +15,12 @@
     cursor: pointer;
     transition: color .2s ease-in-out;
 
-    &:hover {
+    &:hover, &:focus {
       color: $primary-dark;
+    }
+
+    &:focus {
+      @include focus-link(currentColor);
     }
   }
 
