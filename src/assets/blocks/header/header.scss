@@ -13,7 +13,7 @@
 
   &__content-container {
     display: flex;
-    flex-flow: row wrap;
+    // flex-flow: row wrap;
     align-items: center;
   }
 
@@ -42,7 +42,7 @@
     @include light-text;
     text-decoration: none;
     position: relative;
-    margin-left: 30px;
+    margin-left: 36px;
     transition: color .2s ease-in-out;
 
     &:hover, &:focus {
@@ -56,10 +56,10 @@
     &:before {
       content: '';
       position: absolute;
-      top: -4px;
-      left: -30px;
+      top: -7px;
+      left: -23px;
       width: 1px;
-      height: 30px;
+      height: 28px;
       background-color: $primary-light;
     }
   }
@@ -80,6 +80,9 @@
 .nav-list {
   list-style: none;
   margin-right: 28px;
+
+  display: flex;
+  flex-flow: row wrap;
 
   &__item {
     float: left;
