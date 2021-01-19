@@ -20,7 +20,7 @@
       border-color: $primary-main;
     }
 
-    &:hover .input-text-field__input {
+    &:hover .input-text-field__input, &:focus-within .input-text-field__input {
       color: $primary-dark;
     }
   }
