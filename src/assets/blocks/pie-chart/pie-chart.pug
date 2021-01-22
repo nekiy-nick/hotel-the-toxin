@@ -1,22 +1,26 @@
 mixin pie-chart(options)
 
   -
-    let voteResult = ""
+    let defaultItems = [
+          { mode: great, text: "Великолепно" },
+          { mode: good, text: "Хорошо" },
+          { mode: satisfied, text: "Удовлетворительно" },
+          { mode: bad, text: "Разочарован" },
+      ]
 
-  .pie-chart
+    let voteResult = options.voteResult || '0 голосов'
+
+  if(!options)
+    - options = {}
+  if(!options.items)
+    - options.items = defaultItems
+
+  section(.pie-chart)
     h2(class="pie-chart__header") Впечатления от номера
     div(class="pie-chart__body")
       div(class="pie-chart__diagram-wrapper")
-        span(class="diagram__text-result")= options.voteResult
-        svg(class="pie-chart__diagram diagram" width="160" height="160" viewbox="0 0 50 50")
-          circle(class="diagram__unit diagram__unit_great" r="15.9" cx="50%" cy="50%")
-            //-  linearGradient(id="grad1" x1="0%" y1="0%" x2="100%" y2="0%")
-            //-   stop(offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1")
-            //-   stop(offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1")
-
-          circle(class="diagram__unit diagram__unit_good" r="15.9" cx="50%" cy="50%")
-          circle(class="diagram__unit diagram__unit_satisfied diagram__unit_max" r="15.9" cx="50%" cy="50%")
-          circle(class="diagram__unit diagram__unit_bad" r="15.9" cx="50%" cy="50%")
+        span(class="pie-chart__text-result")= voteResult
+        canvas(class="pie-chart__diagram" width="140" height="140")
 
       ul(class="pie-chart__feedback-wrapper")
         for item in options.items
