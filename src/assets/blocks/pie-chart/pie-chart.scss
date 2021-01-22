@@ -5,37 +5,50 @@ $satisfied-linear-gradient: linear-gradient(hsla(259, 100%, 81%, 1), hsla(227, 9
 $bad-linear-gradient: linear-gradient(hsla(0, 0%, 57%, 1), hsla(227, 31%, 35%, 1));
 
 .pie-chart {
-  // background: hsla(10, 10%, 5%, .3);
+  max-width: 320px;
 
   &__header {
-    text-align: center;
-    font-family: $secondary-font;
-    font-size: $h2-text-size;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-align: center;
-    color: $primary-darker;
+    padding-left: 10px;
+    @include h2-header();
+    margin-bottom: 16px;
   }
 
   &__body {
     display: flex;
-    // background: hsla(10, 10%, 5%, .3);
-    justify-content: space-between;
-    align-items: center;
+  }
+
+  &__diagram-wrapper {
+    max-width: 140px;
+    position: relative;
+  }
+
+  &__text-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    text-align: center;
+    @include h3-header();
+    letter-spacing: 1px;
+    color: $cosmos-color;
+
+    &::first-line{
+      font-size: $h1-text-size;
+      line-height: $h2-line-height;
+    }
   }
 
   &__feedback-wrapper {
     list-style: none;
-    padding-left: 30px;
+    margin-left: 35px;
+    align-self: flex-end;
+    margin-bottom: 14px;
   }
 
   &__feedback {
-    font-family: $main-font;
-    font-size: $body-text-size;
-    color: $primary-dark;
     letter-spacing: 1px;
+    @include body-text();
     position: relative;
-    max-width: 800px;
 
     &::before {
       content: '';
@@ -71,66 +84,6 @@ $bad-linear-gradient: linear-gradient(hsla(0, 0%, 57%, 1), hsla(227, 31%, 35%, 1
       &::before {
         background: $bad-linear-gradient;
       }
-    }
-  }
-
-  &__diagram-wrapper {
-    position: relative;
-  }
-
-  &__feedback + &__feedback {
-    margin-top: 8px;
-  }
-}
-
-.diagram {
-
-  &__text-result {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: $cosmos-color;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: $main-font;
-    font-size: $h3-text-size;
-    font-weight: bold;
-
-    &::first-line{
-      font-size: $h1-text-size;
-      font-family: $secondary-font;
-    }
-  }
-  
-  &__unit {
-    fill: none;
-    stroke-width: 2;
-
-    &_max {
-      stroke-width: 6;
-    }   
-
-    &_great {
-      stroke: gold;
-      stroke-dasharray: 35 100;
-    }
-
-    &_good {
-      stroke: $success-color;
-      stroke-dasharray: 0 100;
-      stroke-dashoffset: -50%;
-    }
-
-    &_satisfied {
-      stroke: $cosmos-color;
-      stroke-dasharray: 21 100;
-      stroke-dashoffset: calc(-50% + 46px);
-    }
-
-    &_bad {
-      stroke: $primary-darker;
-      stroke-dasharray: 0 100;
-      stroke-dashoffset: -30;
     }
   }
 }
