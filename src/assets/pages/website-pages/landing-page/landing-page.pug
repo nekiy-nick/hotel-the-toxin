@@ -1,0 +1,15 @@
+extends ../../../layouts/website-page-layout/website-page-layout
+
+block variables
+  - let title = "Landing page";
+  - let pageClass = "landing-page";
+  - let description = "";
+  - let keywords = "";
+
+block content
+  include ../../../blocks/search-room-form/search-room-form
+  +search-room-form({
+    formId: "filter-room",
+    href: "/mock-address/change-me",
+  })
+  p(class="landing-page__slogan") Лучшие номера для вашей работы, отдыха и просто вдохновения

@@ -1,0 +1,36 @@
+.landing-page {
+  background-image: url('/assets/img/landing-page-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: $cosmos-color;
+
+  & .search-room-form {
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-bottom: 400px;
+
+    @media (max-width: 480px) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  &__slogan {
+    position: absolute;
+    bottom: 28px;
+    right: 42px;
+    max-width: 270px;
+    text-align: right;
+    @include h4-header();
+    line-height: $h2-line-height;
+  }
+}
+
+@media (max-width: 359px) {
+  .landing-page {
+    background: $light-color;
+  }
+}
