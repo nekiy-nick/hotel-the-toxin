@@ -1,22 +1,18 @@
-mixin pagination(options)
-  if(!options)
-    - options = {}
-  if(!options.items)
-    - options.items = []
-  if(!options.paginationList)
-    - options.paginationList = {}
+mixin pagination()
 
-  - let paginationList = "pagination list pages"  
-  
-  div(class="pagination-container")=options.paginationList
-    for item in options.paginationList
-      div()=item
-  
+  div(class="pagination")
+    ul(class="pagination__button-list")
+      li(class="pagination__item")
+        button(class="pagination__btn pagination__btn_current") 1
+      li(class="pagination__item")
+        button(class="pagination__btn") 2
+      li(class="pagination__item")
+        button(class="pagination__btn") 3
+      li(class="pagination__item")
+        button(class="pagination__btn" type="button" disabled) ...
+      li(class="pagination__item")
+        button(class="pagination__btn") 15
+      li(class="pagination__item")
+        button(class="pagination__btn pagination__btn_next material-icons" type="button") arrow_forward
 
-  ul(class="pagination")
-    //- li(class="pagination__item")
-    //-   a(href="#" class="pagination__link pagination__link_active") 1
-    //- li(class="pagination__item")
-    //-   a(href="#" class="pagination__link") 2
-    //- li(class="pagination__item")
-    //-   a(href="#" class="pagination__link") 3  
+    p(class="pagination__description") 1 – 12 из 100+ вариантов аренды

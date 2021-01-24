@@ -1,5 +1,48 @@
 .pagination {
-  display: flex;
-  list-style: none;
-  position: relative;
+  max-width: 240px;
+
+  &__button-list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    @include h3-header();
+    color: $primary-main;
+    font-weight: normal;
+    outline: none;
+    transition: box-shadow .2s ease-in-out,
+      transform .2s ease-in-out;
+    background: none;
+
+    &:focus {
+      @include button-shadow($cosmos-color);
+      transform: scale(1);
+    }
+
+    &_current {
+      @include element-gradient($cosmos-color, $cosmos-gradient-color);
+      color: $light-color;
+      font-weight: bold;
+    }
+
+    &_next {
+      @include element-gradient($success-color, $success-gradient-color);
+      text-transform: initial;
+      font-size: $h1-text-size;
+      font-family: 'Material Icons';
+      color: $light-color;
+    }
+  }
+
+  &__description {
+    margin-top: 8px;
+    padding-left: 5px;
+    @include body-text();
+  }
 }
