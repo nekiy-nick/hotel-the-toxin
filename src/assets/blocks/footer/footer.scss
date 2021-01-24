@@ -2,6 +2,7 @@
   width: 100%;
   background-color: $light-color;
   @include  kolonticul-shadow;
+  padding-top: 5.275rem;
 
   @media (max-width: 764px) {
     padding: 100px 0;
