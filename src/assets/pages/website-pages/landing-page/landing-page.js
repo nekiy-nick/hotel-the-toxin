@@ -12,7 +12,7 @@ function setBackgroundImage() {
   setInterval(() => {
     if (n === landingPageImages.length) n = 1;
     else  n++;
-    landingPage.style.background = `url('/assets/img/landing-page-${n}.png')`
+    landingPage.style.backgroundImage = `url('/assets/img/landing-page-${n}.png')`
   }, 5000);
 }
 
