@@ -24,24 +24,21 @@ block content
 
     +dropdown({
       name: "гости",
-      header: "Сколько гостей",
+      type: "guests",
       size: medium,
-      items: [
-        {name: "взрослые"},
-        {name: "взрослые"},
-        {name: "взрослые"},
-      ],
       buttons: true,
     })
 
     +range-slider({
-      name: "диапазон цены",
+      header: "диапазон цены",
       min: "5 000",
       max: "10 000",
+      text: "Стоимость за сутки пребывания в номере",
     })
 
     +expandable-checkbox-list({
       header: "правила дома",
+      mode: "static",
       items: [
         {name: "Можно курить"},
         {name: "Можно с питомцами"},
@@ -65,13 +62,8 @@ block content
 
     +dropdown({
       name: "удобства номера",
-      header: "Удобства",
+      type: "apartaments",
       size: medium,
-      items: [
-        {name: "спальни"},
-        {name: "кровати"},
-        {name: "ванные комнаты"},
-      ],
       buttons: true,
     })
 
