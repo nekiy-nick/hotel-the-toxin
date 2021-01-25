@@ -1,13 +1,23 @@
 .search-room {
   display: flex;
   @include frame-container();
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 34px;
+  padding-bottom: 75px;
+
+  @media (max-width: 600px) {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
  
   &__filter {
-    flex: 1 0 320px;
-    .dropdown__wrapper + *, .range-slider + *, .expandable-checkbox-list + *, .rich-checkbox-button + * {
-      margin-top: 20px;
+    flex: 1 0 270px;
+
+    .dropdown + *, .range-slider + *, .expandable-checkbox-list + *, .rich-checkbox-button + * {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      max-width: max-content;
     }
   }
 }
@@ -15,23 +25,50 @@
 .rooms-catalog {
   display: flex;
   flex-flow: row wrap;
-  padding-top: 20px;  
+  margin-top: 20px;
+  justify-content: flex-end;
+
+  @media (max-width: 922px) {
+    .preview-hotel-room + .preview-hotel-room {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 909px) {
+    .preview-hotel-room + .preview-hotel-room {
+      margin-top: 1rem;
+    }
+  }
+
+  .preview-hotel-room + .preview-hotel-room {
+    margin-left: 12px;
+  }
 
   &__wrapper {
-    padding-left: 5px;
+    max-width: 840px;
 
-    .pagination-container {
-      margin: 0 auto;
+    @media (max-width: 600px) {
+      margin-top: 3rem;
+      max-width: 320px;
+    }
+
+    .pagination {
+      margin: 36px auto 0;
     }
   } 
 
   &__header {
     @include h1-header();
+
+    @media (max-width: 1204px) {
+      text-align: center;
+    }
   }
   
   &__row {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 
     .preview-hotel-room + .preview-hotel-room {
       margin-left: 12px;
