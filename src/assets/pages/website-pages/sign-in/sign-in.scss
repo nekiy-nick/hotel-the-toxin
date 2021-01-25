@@ -1,0 +1,21 @@
+.sign-in {
+  background-image: url('/assets/img/sign-in-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $cosmos-color;
+
+  & .sign-in-form {
+    margin: 175px auto;
+
+    @media (max-width: 380px) {
+      width: auto;
+      margin: 60px auto;
+    }
+  }
+}
+
+@media (max-width: 545px) {
+  .sign-in {
+    background: $light-color;
+  }
+}

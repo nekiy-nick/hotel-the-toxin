@@ -1,0 +1,15 @@
+extends ../../../layouts/website-page-layout/website-page-layout
+
+block variables
+  - let title = "Sign in";
+  - let pageClass = "sign-in";
+  - let description = "";
+  - let keywords = "";
+
+block content
+  include ../../../blocks/sign-in-form/sign-in-form
+  +sign-in-form({
+    formId: "sign-in",
+    header: "Войти",
+    href: "/mock-address/change-me",
+  })
