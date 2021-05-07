@@ -1,6 +1,10 @@
+html {
+  font-size: 14px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  color: rgba(31, 32, 65, 0.5);
+}
 
-*, *:after, *:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+img {
+  max-width: 100%;
 }
