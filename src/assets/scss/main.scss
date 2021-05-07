@@ -5,10 +5,10 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 // подключение material-icons из npm модуля
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons.scss';
-
-@import 'reset.scss';
+@import '~normalize.css/normalize.css';
 @import 'fonts.scss';
 @import 'vars.scss';
+@import 'reset.scss';
 @import 'mixin.scss';
 // импорт файлов проекта
 @import '../blocks/blocks';
@@ -28,9 +28,5 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '../layouts/UI-layout/page-layout.scss';
 @import '../layouts/website-page-layout/website-page-layout.scss';
 
-html {
-  background-color: #fff;
-  font-family: $main-font;
-  color: $primary-darker;
-  font-size: 14px;
-}
+// импорт стилей начальной страницы
+@import '../../performance-page.scss';
